@@ -79,7 +79,7 @@ export default function DirectivePrinciplesPage() {
                 style={{ borderColor: isActive ? p.color : undefined }}
               >
                 <div className={`p-2 rounded-xl ${isActive ? 'bg-opacity-20' : 'bg-white/5'}`} style={{ backgroundColor: isActive ? `${p.color}20` : undefined }}>
-                  {React.cloneElement(p.icon as React.ReactElement, { className: isActive ? '' : 'text-white/40' })}
+                  {React.cloneElement(p.icon as React.ReactElement<any>, { className: isActive ? '' : 'text-white/40' })}
                 </div>
                 <div className="text-left">
                   <h3 className={`font-bold ${isActive ? 'text-white' : 'text-white/50'}`}>{p.title}</h3>
