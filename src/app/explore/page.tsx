@@ -3,7 +3,7 @@
 import React from 'react';
 import Navbar from '@/components/shared/Navbar';
 import Footer from '@/components/shared/Footer';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import Link from 'next/link';
 import { BookOpen, Shield, HeartHandshake, FileText, AlertTriangle, Building2, BrainCircuit, Flag, Gavel, Scale, FileSignature, Layers, Globe, Map } from 'lucide-react';
 
@@ -82,7 +82,7 @@ const TOPICS = [
   }
 ];
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -90,7 +90,7 @@ const containerVariants = {
   }
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   show: { opacity: 1, y: 0, transition: { duration: 0.5, type: 'spring' } }
 };
