@@ -1,26 +1,114 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-saffron: #FF6B00;
+  --color-saffron-light: #FF8C3A;
+  --color-saffron-glow: #FFD6B0;
+  --color-saffron-pale: #FFF0E0;
+  --color-india-green: #138808;
+  --color-green-light: #1EBF0D;
+  --color-navy: #0A0F5C;
+  --color-navy-mid: #1A237E;
+  --color-gold: #FFD700;
+  --color-gold-light: #FFEC6E;
+  --color-cream: #FFF8F0;
+  --color-cream-dark: #F5EDE0;
+  --color-charcoal: #1A1A2E;
+  --color-muted: rgba(26, 26, 46, 0.5);
+
+  --font-display: var(--font-baloo-2);
+  --font-sans: var(--font-inter);
+  --font-devanagari: var(--font-noto-sans-devanagari);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #FFF8F0;
+  --foreground: #1A1A2E;
+}
+
+/* Fix for Google Translate toolbar overlap with fixed navbar */
+html.translated-ltr nav.fixed,
+html.translated-rtl nav.fixed,
+body.translated-ltr nav.fixed,
+body.translated-rtl nav.fixed,
+html.translated-ltr .mobile-menu,
+html.translated-rtl .mobile-menu,
+body.translated-ltr .mobile-menu,
+body.translated-rtl .mobile-menu {
+  top: 40px !important;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
 }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #FFF8F0; }
+::-webkit-scrollbar-thumb { background: #FF6B00; border-radius: 2px; }
+::selection { background: #FF6B00; color: #fff; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-14px); }
+}
+
+@keyframes floatSide {
+  0%, 100% { transform: translateX(0px) rotate(0deg); }
+  50% { transform: translateX(10px) rotate(3deg); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0px #FF6B00; }
+  50% { box-shadow: 0 0 24px #FF6B0066; }
+}
+
+@keyframes dash-draw {
+  from { stroke-dashoffset: 1000; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes confetti-fall {
+  0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(80px) rotate(720deg); opacity: 0; }
+}
+
+@keyframes xp-float {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-40px); opacity: 0; }
+}
+
+@keyframes timer-drain {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-float-side { animation: floatSide 4s ease-in-out infinite; }
+.animate-spin-slow { animation: spin-slow 20s linear infinite; }
+.animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+.goog-te-banner-frame { display: none !important; }
+body { top: 0 !important; }
+#google_translate_element { display: none !important; }
