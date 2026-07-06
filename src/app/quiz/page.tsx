@@ -4,7 +4,8 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '@/components/shared/Navbar';
 import Footer from '@/components/shared/Footer';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Flame, Star, Trophy } from 'lucide-react';
+import { Flame, Star, Trophy, ShieldAlert, ArrowRight, Play } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 const QUESTIONS = [
   {
@@ -30,14 +31,17 @@ export default function QuizPage() {
   const [streak, setStreak] = useState(0);
   const [xp, setXp] = useState(0);
   const [gameOver, setGameOver] = useState(false);
+  const [gameMode, setGameMode] = useState<'menu' | 'quiz'>('menu');
   
   const [timeLeft, setTimeLeft] = useState(30);
   const [showConfetti, setShowConfetti] = useState(false);
   const [showXpFloat, setShowXpFloat] = useState(false);
   const [selectedAns, setSelectedAns] = useState<number | null>(null);
+  
+  const router = useRouter();
 
   useEffect(() => {
-    if (gameOver || selectedAns !== null) return;
+    if (gameOver || selectedAns !== null || gameMode === 'menu') return;
     
     const timer = setInterval(() => {
       setTimeLeft(prev => {
@@ -120,7 +124,56 @@ export default function QuizPage() {
           )}
         </AnimatePresence>
 
-        {!gameOver ? (
+        {gameMode === 'menu' ? (
+          <div className="w-full text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mb-12"
+            >
+              <h1 className="font-[family-name:var(--font-display)] text-[clamp(2.5rem,5vw,4rem)] font-bold text-white leading-tight mb-4">
+                Interactive <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] to-[#FF8B00]">Learning</span>
+              </h1>
+              <p className="text-white/60 text-lg max-w-xl mx-auto">
+                Test your knowledge of the Constitution or step into real-world scenarios to see how your rights protect you.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+              <motion.button
+                onClick={() => setGameMode('quiz')}
+                whileHover={{ scale: 1.02 }}
+                className="bg-white/5 border border-white/10 rounded-3xl p-8 text-left hover:border-[#FFD700]/50 transition-colors group relative overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-[#FFD700]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="bg-[#FFD700]/20 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 text-[#FFD700]">
+                  <Trophy size={32} />
+                </div>
+                <h3 className="font-[family-name:var(--font-display)] text-2xl font-bold mb-2">Civics Quiz</h3>
+                <p className="text-white/60 mb-8">Test your factual knowledge of articles, amendments, and history to earn XP.</p>
+                <div className="flex items-center gap-2 text-[#FFD700] font-bold">
+                  Start Quiz <Play size={18} />
+                </div>
+              </motion.button>
+
+              <motion.button
+                onClick={() => router.push('/simulator')}
+                whileHover={{ scale: 1.02 }}
+                className="bg-white/5 border border-white/10 rounded-3xl p-8 text-left hover:border-[#DE350B]/50 transition-colors group relative overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-[#DE350B]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="bg-[#DE350B]/20 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 text-[#DE350B]">
+                  <ShieldAlert size={32} />
+                </div>
+                <h3 className="font-[family-name:var(--font-display)] text-2xl font-bold mb-2">Rights Simulator</h3>
+                <p className="text-white/60 mb-8">Step into real-life situations and apply your fundamental rights to save the day.</p>
+                <div className="flex items-center gap-2 text-[#DE350B] font-bold">
+                  Play Simulator <ArrowRight size={18} />
+                </div>
+              </motion.button>
+            </div>
+          </div>
+        ) : !gameOver ? (
           <div className="w-full max-w-2xl bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 relative overflow-hidden">
             
             {/* Top Bar (Streak & XP) */}
@@ -205,11 +258,11 @@ export default function QuizPage() {
             </button>
             <button 
               onClick={() => {
-                setCurrentQ(0); setScore(0); setStreak(0); setXp(0); setGameOver(false); setTimeLeft(30); setSelectedAns(null);
+                setGameMode('menu'); setCurrentQ(0); setScore(0); setStreak(0); setXp(0); setGameOver(false); setTimeLeft(30); setSelectedAns(null);
               }}
               className="w-full mt-4 text-[#FF6B00] font-bold py-3 hover:bg-[#FF6B00]/10 rounded-xl transition-colors"
             >
-              Play Again
+              Back to Menu
             </button>
           </motion.div>
         )}

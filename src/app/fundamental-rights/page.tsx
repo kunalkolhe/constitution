@@ -4,7 +4,10 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/shared/Navbar';
 import Footer from '@/components/shared/Footer';
+import AudioPlayer from '@/components/shared/AudioPlayer';
 import { Scale, Users, Shield, HeartHandshake, BookOpen, GraduationCap } from 'lucide-react';
+
+const AUDIO_TEXT = "Fundamental Rights are your unbreakable shield as an Indian citizen. There are six main fundamental rights guaranteed by the Constitution. First, the Right to Equality: Everyone is equal before the law, and there is no discrimination on grounds of religion, race, caste, sex or place of birth. Second, the Right to Freedom: Guaranteeing freedom of speech, expression, assembly, association, movement, residence, and profession. Third, the Right against Exploitation: Prohibiting human trafficking, forced labor, and child labor. Fourth, the Right to Freedom of Religion: The freedom to profess, practice, and propagate any religion freely. Fifth, Cultural & Educational Rights: Protecting the rights of minorities to conserve their culture and establish educational institutions. And finally, the Right to Constitutional Remedies: Known as the Heart and Soul of the Constitution, which allows you to approach the Supreme Court directly if any of your rights are violated.";
 
 const RIGHTS = [
   {
@@ -141,9 +144,10 @@ export default function FundamentalRightsPage() {
           <h1 className="font-[family-name:var(--font-display)] text-[clamp(2.5rem,6vw,4rem)] font-bold text-white leading-none mb-4">
             Fundamental Rights
           </h1>
-          <p className="font-[family-name:var(--font-sans)] text-white/60 text-lg">
+          <p className="font-[family-name:var(--font-sans)] text-white/60 text-lg mb-8">
             Your unbreakable shield as an Indian citizen
           </p>
+          <AudioPlayer text={AUDIO_TEXT} />
         </div>
 
         {/* CSS 3D Flip Cards Grid */}

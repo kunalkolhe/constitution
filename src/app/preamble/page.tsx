@@ -5,6 +5,7 @@ import { motion, useScroll, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Navbar from '@/components/shared/Navbar';
 import Footer from '@/components/shared/Footer';
+import AudioPlayer from '@/components/shared/AudioPlayer';
 import { X } from 'lucide-react';
 
 const PREAMBLE_TEXT = "WE, THE PEOPLE OF INDIA, having solemnly resolved to constitute India into a SOVEREIGN SOCIALIST SECULAR DEMOCRATIC REPUBLIC and to secure to all its citizens: JUSTICE, social, economic and political; LIBERTY of thought, expression, belief, faith and worship; EQUALITY of status and of opportunity; and to promote among them all FRATERNITY assuring the dignity of the individual and the unity and integrity of the Nation; IN OUR CONSTITUENT ASSEMBLY this twenty-sixth day of November, 1949, do HEREBY ADOPT, ENACT AND GIVE TO OURSELVES THIS CONSTITUTION.";
@@ -67,9 +68,10 @@ export default function PreamblePage() {
           <h1 className="font-[family-name:var(--font-display)] text-[clamp(2.5rem,6vw,5rem)] font-bold text-[#F4F1EA] leading-none mb-4 drop-shadow-md">
             The Preamble
           </h1>
-          <p className="font-[family-name:var(--font-sans)] text-[#F4F1EA]/70 text-lg">
+          <p className="font-[family-name:var(--font-sans)] text-[#F4F1EA]/70 text-lg mb-6">
             The soul of the Indian Constitution
           </p>
+          <AudioPlayer text={PREAMBLE_TEXT} />
         </div>
 
         <motion.div 

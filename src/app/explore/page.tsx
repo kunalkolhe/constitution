@@ -5,25 +5,9 @@ import Navbar from '@/components/shared/Navbar';
 import Footer from '@/components/shared/Footer';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { BookOpen, Shield, HeartHandshake, FileText, AlertTriangle, Building2, BrainCircuit, Flag, Gavel, Scale, FileSignature, Layers, Globe } from 'lucide-react';
+import { BookOpen, Shield, HeartHandshake, FileText, AlertTriangle, Building2, BrainCircuit, Flag, Gavel, Scale, FileSignature, Layers, Globe, Map } from 'lucide-react';
 
 const TOPICS = [
-  {
-    title: 'The Preamble',
-    desc: 'The soul of the Constitution and its guiding philosophy.',
-    icon: <BookOpen className="text-[#FF6B00]" size={32} />,
-    color: '#FF6B00',
-    link: '/preamble',
-    part: 'Preface'
-  },
-  {
-    title: 'Fundamental Rights',
-    desc: 'Basic human rights guaranteed to all citizens.',
-    icon: <Shield className="text-[#138808]" size={32} />,
-    color: '#138808',
-    link: '/fundamental-rights',
-    part: 'Part III'
-  },
   {
     title: 'Directive Principles',
     desc: 'Guidelines for the government to frame laws and policies.',
@@ -65,12 +49,12 @@ const TOPICS = [
     part: 'Part XX'
   },
   {
-    title: 'Union & States',
-    desc: 'Distribution of legislative and executive powers.',
-    icon: <Layers className="text-[#00B8D9]" size={32} />,
+    title: 'States & Union Territories',
+    desc: 'Explore the constitutional details of all 28 States and 8 UTs.',
+    icon: <Map className="text-[#00B8D9]" size={32} />,
     color: '#00B8D9',
-    link: '/union-state-relations',
-    part: 'Part XI'
+    link: '/states',
+    part: 'Geography'
   },
   {
     title: 'Glossary',
