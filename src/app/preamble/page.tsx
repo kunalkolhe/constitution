@@ -78,7 +78,7 @@ export default function PreamblePage() {
           variants={containerVariants}
           initial="hidden"
           animate="show"
-          className="text-center leading-[2] md:leading-[2.2] font-[family-name:var(--font-display)] text-[clamp(1.5rem,3.5vw,2.5rem)] font-semibold text-[#F4F1EA]/90 drop-shadow-sm max-w-5xl p-8 md:p-16 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md shadow-2xl relative overflow-hidden"
+          className="text-center leading-[2] md:leading-[2.2] font-[family-name:var(--font-display)] text-[clamp(1.5rem,3.5vw,2.5rem)] font-semibold text-[#F4F1EA]/90 drop-shadow-sm max-w-5xl p-6 sm:p-8 md:p-16 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md shadow-2xl relative overflow-hidden"
         >
           {/* Subtle inner glow for the glass card */}
           <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />

@@ -46,31 +46,11 @@ function StoryCard({ beat, index }: { beat: typeof STORY_BEATS[0], index: number
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.7, ease: 'easeOut' }}
-      className="relative flex flex-col md:grid md:grid-cols-[1fr_auto_1fr] items-center gap-8 md:gap-0"
+      className="relative flex flex-col md:grid md:grid-cols-[1fr_auto_1fr] items-center gap-6 md:gap-0"
     >
-      {/* LEFT CONTENT */}
-      {isLeft ? (
-        <div className="md:pr-16 w-full text-center md:text-right min-w-0">
-          <div 
-            className="inline-block px-4 py-1 rounded-full text-xs font-bold uppercase tracking-[0.2em] mb-4"
-            style={{ backgroundColor: `${beat.color}20`, color: beat.color }}
-          >
-            {beat.year}
-          </div>
-          <h3 className="font-[family-name:var(--font-display)] text-[clamp(1.5rem,3vw,2.2rem)] font-bold text-white leading-tight mb-4">
-            {beat.headline}
-          </h3>
-          <p className="font-[family-name:var(--font-sans)] text-white/60 text-[1rem] leading-[1.8] max-w-lg mx-auto md:ml-auto md:mr-0 text-left md:text-right">
-            {beat.body}
-          </p>
-        </div>
-      ) : (
-        <div className="hidden md:block min-w-0" />
-      )}
-
-      {/* CENTER NODE */}
+      {/* CENTER NODE (Appears first on mobile) */}
       <div 
-        className="z-10 flex-shrink-0 w-[100px] h-[100px] md:w-[120px] md:h-[120px] rounded-full flex items-center justify-center border border-white/10 text-5xl bg-[#05050A]"
+        className="z-10 flex-shrink-0 w-[90px] h-[90px] md:w-[120px] md:h-[120px] rounded-full flex items-center justify-center border border-white/10 text-5xl bg-[#05050A] order-1 md:order-none md:col-start-2 md:row-start-1"
         style={{ 
           background: `radial-gradient(circle at center, ${beat.color}20, #05050A 70%)`,
           boxShadow: `0 0 50px ${beat.color}15`
@@ -79,25 +59,27 @@ function StoryCard({ beat, index }: { beat: typeof STORY_BEATS[0], index: number
         {beat.symbol}
       </div>
 
-      {/* RIGHT CONTENT */}
-      {!isLeft ? (
-        <div className="md:pl-16 w-full text-center md:text-left min-w-0">
-          <div 
-            className="inline-block px-4 py-1 rounded-full text-xs font-bold uppercase tracking-[0.2em] mb-4"
-            style={{ backgroundColor: `${beat.color}20`, color: beat.color }}
-          >
-            {beat.year}
-          </div>
-          <h3 className="font-[family-name:var(--font-display)] text-[clamp(1.5rem,3vw,2.2rem)] font-bold text-white leading-tight mb-4">
-            {beat.headline}
-          </h3>
-          <p className="font-[family-name:var(--font-sans)] text-white/60 text-[1rem] leading-[1.8] max-w-lg mx-auto md:mr-auto md:ml-0 text-left">
-            {beat.body}
-          </p>
+      {/* CONTENT BLOCK (Appears second on mobile, alternating left/right on desktop) */}
+      <div className={`w-full text-center order-2 md:order-none md:row-start-1 ${
+        isLeft 
+          ? 'md:col-start-1 md:text-right md:pr-16' 
+          : 'md:col-start-3 md:text-left md:pl-16'
+      }`}>
+        <div 
+          className="inline-block px-4 py-1 rounded-full text-xs font-bold uppercase tracking-[0.2em] mb-4"
+          style={{ backgroundColor: `${beat.color}20`, color: beat.color }}
+        >
+          {beat.year}
         </div>
-      ) : (
-        <div className="hidden md:block min-w-0" />
-      )}
+        <h3 className="font-[family-name:var(--font-display)] text-[clamp(1.5rem,3vw,2.2rem)] font-bold text-white leading-tight mb-4">
+          {beat.headline}
+        </h3>
+        <p className={`font-[family-name:var(--font-sans)] text-white/60 text-[1rem] leading-[1.8] max-w-lg mx-auto ${
+          isLeft ? 'md:ml-auto md:mr-0 md:text-right' : 'md:mr-auto md:ml-0 md:text-left'
+        }`}>
+          {beat.body}
+        </p>
+      </div>
     </motion.div>
   );
 }

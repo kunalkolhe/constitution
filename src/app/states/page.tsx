@@ -212,7 +212,7 @@ export default function StatesPage() {
                       <Landmark size={14} className="text-[#FFD700]" />
                       Constitutional Representation
                     </h3>
-                    <div className="grid grid-cols-4 gap-2 text-center">
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center">
                       <div className="bg-black/40 rounded-xl p-2 border border-white/5">
                         <div className="text-[9px] text-white/40 uppercase font-bold mb-1">Lok Sabha</div>
                         <div className="font-black text-lg text-[#00B8D9]">{selected.lokSabhaSeats}</div>
