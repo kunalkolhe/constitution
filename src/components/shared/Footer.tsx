@@ -2,8 +2,9 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { MessageCircle, Camera, Video } from 'lucide-react';
+import { ArrowUp } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
+import MagneticButton from '@/components/shared/MagneticButton';
 
 const QUICK_LINKS = [
   { key: 'home', path: '/' },
@@ -39,7 +40,7 @@ export default function Footer() {
         
         {/* LEFT COLUMN */}
         <div className="w-full md:w-[35%] flex flex-col items-start">
-          <div className="flex items-center gap-3 mb-2">
+          <div className="flex items-center gap-3">
             <div className="w-[32px] h-[32px] relative animate-spin-slow">
               <svg viewBox="0 0 100 100" className="w-full h-full stroke-white">
                 <circle cx="50" cy="50" r="48" fill="none" strokeWidth="3" />
@@ -58,17 +59,6 @@ export default function Footer() {
             <span className="font-[family-name:var(--font-display)] text-[1.25rem] font-bold">
               BhartiyaSamvidhan
             </span>
-          </div>
-          <p className="text-[rgba(255,255,255,0.6)] text-[0.8rem] mb-4">
-            {t('tagline')} 🇮🇳
-          </p>
-          {/* These don't have real destinations yet — hidden from the
-              accessibility tree rather than announced as working links that
-              go nowhere. Give them a real href + aria-label once they do. */}
-          <div className="flex gap-4" aria-hidden="true">
-            <a href="#" tabIndex={-1} className="hover:text-[#FF6B00] transition-colors"><MessageCircle size={18} /></a>
-            <a href="#" tabIndex={-1} className="hover:text-[#FF6B00] transition-colors"><Camera size={18} /></a>
-            <a href="#" tabIndex={-1} className="hover:text-[#FF6B00] transition-colors"><Video size={18} /></a>
           </div>
         </div>
 
@@ -109,11 +99,41 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* SCROLLING SECTION STRIP — a slow, looping marquee of every quick
+          link, purely decorative (the real, accessible links already live
+          in the column above), so it's hidden from the accessibility tree
+          rather than read aloud as a duplicate, jumbled nav. */}
+      <div
+        aria-hidden="true"
+        className="max-w-7xl mx-auto mt-10 border-y border-white/5 py-3 overflow-hidden relative z-10"
+      >
+        <div className="footer-marquee flex w-max gap-10">
+          {[...QUICK_LINKS, ...QUICK_LINKS].map((link, i) => (
+            <span
+              key={i}
+              className="flex items-center gap-10 text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-white/25 whitespace-nowrap"
+            >
+              {t(link.key)}
+              <span className="text-[#FF6B00]/50">✦</span>
+            </span>
+          ))}
+        </div>
+      </div>
+
       {/* BOTTOM STRIP */}
-      <div className="max-w-7xl mx-auto mt-10 pt-4 border-t border-[rgba(255,255,255,0.05)] text-center relative z-10">
-        <p className="text-[0.7rem] text-[rgba(255,255,255,0.3)] tracking-widest uppercase">
+      <div className="max-w-7xl mx-auto mt-6 flex flex-col-reverse md:flex-row items-center justify-center md:justify-between gap-4 relative z-10">
+        <p className="text-[0.7rem] text-[rgba(255,255,255,0.3)] tracking-widest uppercase text-center md:text-left">
           {t('footerCopyright')}
         </p>
+        <MagneticButton className="shrink-0">
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            aria-label={t('backToTop')}
+            className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-[#FF6B00] hover:border-[#FF6B00]/40 hover:bg-white/5 transition-colors"
+          >
+            <ArrowUp size={16} />
+          </button>
+        </MagneticButton>
       </div>
     </footer>
   );

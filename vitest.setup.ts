@@ -15,3 +15,18 @@ vi.mock('next/navigation', () => ({
     prefetch: vi.fn(),
   }),
 }));
+
+// jsdom has no IntersectionObserver — framer-motion's useInView (used by
+// Squiggle and scroll-reveal sections rendered on every page via Footer/
+// FeatureCards) needs a stand-in or it throws on mount. Tests don't care
+// about actual viewport intersection, so a no-op stub is enough.
+class MockIntersectionObserver {
+  observe = vi.fn();
+  unobserve = vi.fn();
+  disconnect = vi.fn();
+  takeRecords = () => [];
+  root = null;
+  rootMargin = '';
+  thresholds: ReadonlyArray<number> = [];
+}
+vi.stubGlobal('IntersectionObserver', MockIntersectionObserver);

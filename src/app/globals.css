@@ -199,6 +199,19 @@ body {
 .animate-float-side { animation: floatSide 4s ease-in-out infinite; }
 .animate-spin-slow { animation: spin-slow 20s linear infinite; }
 .animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+
+/* Scrolling section-name strip in the footer (see Footer.tsx). Paused
+   rather than removed under reduced motion, so the full loop is still
+   readable without the continuous scroll. */
+.footer-marquee {
+  animation: marquee-left 32s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-marquee {
+    animation-play-state: paused;
+  }
+}
 .goog-te-banner-frame { display: none !important; }
 body { top: 0 !important; }
 #google_translate_element { display: none !important; }

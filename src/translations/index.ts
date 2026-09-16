@@ -28,10 +28,11 @@ export const translations: Record<string, Record<string, string>> = {
     tagline: 'Samajho Apna Adhikar',
     quickLinks: 'Quick Links',
     learnInYourLanguage: 'Learn In Your Language',
-    footerCopyright: '© 2026 BhartiyaSamvidhan · Made with ❤️ for every Indian citizen · India First 🇮🇳',
+    footerCopyright: '© 2026 BhartiyaSamvidhan',
     toggleMenu: 'Toggle menu',
     changeLanguage: 'Change language',
     selectLanguage: 'Select Language',
+    backToTop: 'Back to top',
   },
   'हिंदी': {
     home: 'मुखपृष्ठ',
@@ -51,10 +52,11 @@ export const translations: Record<string, Record<string, string>> = {
     tagline: 'समझो अपना अधिकार',
     quickLinks: 'त्वरित लिंक',
     learnInYourLanguage: 'अपनी भाषा में सीखें',
-    footerCopyright: '© 2026 भारतीय संविधान · हर भारतीय नागरिक के लिए ❤️ से बनाया गया · इंडिया फर्स्ट 🇮🇳',
+    footerCopyright: '© 2026 भारतीय संविधान',
     toggleMenu: 'मेनू खोलें',
     changeLanguage: 'भाषा बदलें',
     selectLanguage: 'भाषा चुनें',
+    backToTop: 'ऊपर जाएं',
   },
 };
 
