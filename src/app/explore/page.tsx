@@ -6,6 +6,8 @@ import Footer from '@/components/shared/Footer';
 import { motion, Variants } from 'framer-motion';
 import Link from 'next/link';
 import { HeartHandshake, FileText, AlertTriangle, Building2, Flag, Scale, FileSignature, Globe, Map } from 'lucide-react';
+import Squiggle from '@/components/shared/Squiggle';
+import TiltCard from '@/components/shared/TiltCard';
 
 const TOPICS = [
   {
@@ -107,7 +109,10 @@ export default function ExplorePage() {
             animate={{ opacity: 1, y: 0 }}
             className="font-[family-name:var(--font-display)] text-[clamp(2.5rem,6vw,4rem)] font-bold text-[#1A1A2E] leading-none mb-4"
           >
-            Explore the Constitution
+            Explore the <span className="relative inline-block">
+              Constitution
+              <Squiggle color="#138808" />
+            </span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: -20 }}
@@ -127,7 +132,7 @@ export default function ExplorePage() {
         >
           {TOPICS.map((topic, i) => (
             <Link key={i} href={topic.link}>
-              <motion.div 
+              <TiltCard
                 variants={itemVariants}
                 whileHover={{ y: -5, scale: 1.02 }}
                 className="bg-white rounded-2xl p-6 shadow-lg shadow-black/5 border border-gray-100 hover:border-black/20 transition-all duration-300 h-full flex flex-col group relative overflow-hidden"
@@ -155,10 +160,10 @@ export default function ExplorePage() {
                 </p>
                 
                 <div className="text-sm font-semibold flex items-center gap-2 mt-auto" style={{ color: topic.color }}>
-                  Read more 
+                  Read more
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </div>
-              </motion.div>
+              </TiltCard>
             </Link>
           ))}
         </motion.div>

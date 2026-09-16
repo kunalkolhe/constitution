@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { motion, useTransform, MotionValue } from 'framer-motion';
 import { Rocket, Zap } from 'lucide-react';
+import MagneticButton from '@/components/shared/MagneticButton';
 
 interface HeroOverlayProps {
   scrollYProgress: MotionValue<number>;
@@ -76,12 +77,16 @@ export default function HeroOverlay({ scrollYProgress }: HeroOverlayProps) {
         </h2>
         
         <div className="flex flex-col sm:flex-row gap-4 mt-8 pointer-events-auto">
-          <Link href="/explore" className="bg-[#FF6B00] hover:bg-[#FF8C3A] text-white font-semibold rounded-full px-8 py-4 transition-colors shadow-lg shadow-[#FF6B00]/40 flex items-center justify-center gap-2">
-            <Rocket size={18} /> Start Exploring
-          </Link>
-          <Link href="/quiz" className="border-2 border-white/30 hover:bg-white hover:text-black text-white backdrop-blur-md font-semibold rounded-full px-8 py-4 transition-colors flex items-center justify-center gap-2">
-            <Zap size={18} /> Take a Quiz
-          </Link>
+          <MagneticButton className="bg-[#FF6B00] hover:bg-[#FF8C3A] text-white font-semibold rounded-full transition-colors shadow-lg shadow-[#FF6B00]/40">
+            <Link href="/explore" className="w-full h-full px-8 py-4 flex items-center justify-center gap-2">
+              <Rocket size={18} /> Start Exploring
+            </Link>
+          </MagneticButton>
+          <MagneticButton className="border-2 border-white/30 hover:bg-white hover:text-black text-white backdrop-blur-md font-semibold rounded-full transition-colors">
+            <Link href="/quiz" className="w-full h-full px-8 py-4 flex items-center justify-center gap-2">
+              <Zap size={18} /> Take a Quiz
+            </Link>
+          </MagneticButton>
         </div>
         
         <p className="font-[family-name:var(--font-sans)] text-[0.9rem] text-white/50 tracking-[0.12em] mt-8 text-center uppercase drop-shadow-sm">

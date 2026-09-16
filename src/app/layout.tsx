@@ -3,6 +3,7 @@ import { Baloo_2, Inter, Noto_Sans_Devanagari, Playfair_Display } from "next/fon
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 import Script from "next/script";
+import CustomCursor from "@/components/shared/CustomCursor";
 
 const baloo2 = Baloo_2({
   variable: "--font-baloo-2",
@@ -43,6 +44,8 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col m-0 p-0 overflow-x-hidden bg-[var(--background)] text-[var(--foreground)]" suppressHydrationWarning>
+        <div className="grain-overlay" aria-hidden="true" />
+        <CustomCursor />
         <LanguageProvider>
           <div id="google_translate_element" style={{ display: 'none' }}></div>
           {children}

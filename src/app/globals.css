@@ -51,6 +51,83 @@ body {
 ::-webkit-scrollbar-thumb { background: #FF6B00; border-radius: 2px; }
 ::selection { background: #FF6B00; color: #fff; }
 
+/* A branded focus ring instead of the browser default blue rectangle —
+   still fully visible for keyboard navigation, just on-brand. */
+:focus-visible {
+  outline: 2px dashed #FF6B00;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Subtle film-grain texture over the whole site — a fixed, non-interactive
+   overlay that adds a tactile, "designed" quality without touching any
+   page's actual layout or colors. Opacity is intentionally low (2%); this
+   should read as texture, not as visible noise. */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0.025;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Custom cursor (see src/components/shared/CustomCursor.tsx). Only ever
+   enabled on devices that actually have a precise pointer — touchscreens
+   keep their normal behavior entirely untouched. mix-blend-mode: difference
+   is what lets one cursor color read clearly over both the light page
+   background and the dark navbar/footer without any per-section logic. */
+@media (hover: hover) and (pointer: fine) {
+  html.has-custom-cursor,
+  html.has-custom-cursor a,
+  html.has-custom-cursor button {
+    cursor: none;
+  }
+}
+
+.custom-cursor-dot,
+.custom-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+  border-radius: 999px;
+  mix-blend-mode: difference;
+  background: #FFF8F0;
+  will-change: transform;
+}
+
+.custom-cursor-dot {
+  width: 8px;
+  height: 8px;
+  transform: translate(-50%, -50%);
+}
+
+.custom-cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid #FFF8F0;
+  background: transparent;
+  transform: translate(-50%, -50%);
+  transition: width 0.25s ease, height 0.25s ease;
+}
+
+.custom-cursor-ring.is-hovering {
+  width: 64px;
+  height: 64px;
+}
+
+/* A hand-drawn-style underline accent (see src/components/shared/Squiggle.tsx)
+   that draws itself in via stroke-dashoffset once scrolled into view,
+   instead of just appearing — reuses the existing dash-draw keyframe. */
+.squiggle-draw {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: dash-draw 1s ease-out forwards;
+}
+
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-14px); }

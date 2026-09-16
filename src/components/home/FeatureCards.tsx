@@ -4,6 +4,8 @@ import React from 'react';
 import { motion, Variants } from 'framer-motion';
 import { BookOpen, Shield, Building2, Compass, BrainCircuit, Map } from 'lucide-react';
 import Link from 'next/link';
+import Squiggle from '@/components/shared/Squiggle';
+import TiltCard from '@/components/shared/TiltCard';
 
 const CARDS = [
   {
@@ -96,7 +98,10 @@ export default function FeatureCards() {
           className="text-center mb-16"
         >
           <h2 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,4rem)] font-bold text-[#1A1A2E] leading-[1.2] tracking-[-0.03em] mb-4">
-            Everything the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B00] to-[#FF8C3A]">Constitution</span><br/>Has to Offer
+            Everything the <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B00] to-[#FF8C3A]">
+              Constitution
+              <Squiggle />
+            </span><br/>Has to Offer
           </h2>
           <p className="font-[family-name:var(--font-sans)] text-[1.1rem] text-[#1A1A2E]/60">
             From Preamble to Parliament — explore it all
@@ -112,7 +117,7 @@ export default function FeatureCards() {
         >
           {CARDS.map((card) => (
             <Link key={card.id} href={card.link}>
-              <motion.div
+              <TiltCard
                 variants={cardVariants}
                 whileHover={{ y: -8, scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
@@ -140,7 +145,7 @@ export default function FeatureCards() {
                 <p className="font-[family-name:var(--font-sans)] text-[#1A1A2E]/60 leading-relaxed mt-auto group-hover:text-[#1A1A2E]/80 transition-colors">
                   {card.description}
                 </p>
-              </motion.div>
+              </TiltCard>
             </Link>
           ))}
         </motion.div>
