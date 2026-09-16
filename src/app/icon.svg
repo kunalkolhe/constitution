@@ -1,44 +1,45 @@
 <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="512" height="512" rx="112" fill="#05050A" />
+  <rect width="512" height="512" rx="112" fill="#FFF8F0" />
 
-  <circle cx="256" cy="256" r="230" fill="url(#ring)" />
-  <circle cx="256" cy="256" r="196" fill="#FFF8F0" />
+  <!-- Seal border: outer navy ring, thin gap, inner navy ring -->
+  <circle cx="256" cy="256" r="220" fill="none" stroke="#0A0F5C" stroke-width="10" />
+  <circle cx="256" cy="256" r="196" fill="none" stroke="#0A0F5C" stroke-width="4" />
 
+  <!-- Saffron field between the seal border and the chakra -->
+  <circle cx="256" cy="256" r="184" fill="#FF6B00" fill-opacity="0.08" />
+
+  <!-- Ashoka Chakra: 24 spokes -->
   <g>
-      <line x1="256" y1="256" x2="466.00" y2="256.00" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
-      <line x1="256" y1="256" x2="458.84" y2="310.35" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
-      <line x1="256" y1="256" x2="437.87" y2="361.00" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
-      <line x1="256" y1="256" x2="404.49" y2="404.49" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
-      <line x1="256" y1="256" x2="361.00" y2="437.87" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
-      <line x1="256" y1="256" x2="310.35" y2="458.84" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
-      <line x1="256" y1="256" x2="256.00" y2="466.00" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
-      <line x1="256" y1="256" x2="201.65" y2="458.84" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
-      <line x1="256" y1="256" x2="151.00" y2="437.87" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
-      <line x1="256" y1="256" x2="107.51" y2="404.49" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
-      <line x1="256" y1="256" x2="74.13" y2="361.00" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
-      <line x1="256" y1="256" x2="53.16" y2="310.35" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
-      <line x1="256" y1="256" x2="46.00" y2="256.00" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
-      <line x1="256" y1="256" x2="53.16" y2="201.65" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
-      <line x1="256" y1="256" x2="74.13" y2="151.00" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
-      <line x1="256" y1="256" x2="107.51" y2="107.51" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
-      <line x1="256" y1="256" x2="151.00" y2="74.13" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
-      <line x1="256" y1="256" x2="201.65" y2="53.16" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
-      <line x1="256" y1="256" x2="256.00" y2="46.00" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
-      <line x1="256" y1="256" x2="310.35" y2="53.16" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
-      <line x1="256" y1="256" x2="361.00" y2="74.13" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
-      <line x1="256" y1="256" x2="404.49" y2="107.51" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
-      <line x1="256" y1="256" x2="437.87" y2="151.00" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
-      <line x1="256" y1="256" x2="458.84" y2="201.65" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
+    <line x1="256" y1="256" x2="406.00" y2="256.00" stroke="#0A0F5C" stroke-width="9" stroke-linecap="round" />
+    <line x1="256" y1="256" x2="400.89" y2="294.82" stroke="#0A0F5C" stroke-width="9" stroke-linecap="round" />
+    <line x1="256" y1="256" x2="385.90" y2="331.00" stroke="#0A0F5C" stroke-width="9" stroke-linecap="round" />
+    <line x1="256" y1="256" x2="362.07" y2="362.07" stroke="#0A0F5C" stroke-width="9" stroke-linecap="round" />
+    <line x1="256" y1="256" x2="331.00" y2="385.90" stroke="#0A0F5C" stroke-width="9" stroke-linecap="round" />
+    <line x1="256" y1="256" x2="294.82" y2="400.89" stroke="#0A0F5C" stroke-width="9" stroke-linecap="round" />
+    <line x1="256" y1="256" x2="256.00" y2="406.00" stroke="#0A0F5C" stroke-width="9" stroke-linecap="round" />
+    <line x1="256" y1="256" x2="217.18" y2="400.89" stroke="#0A0F5C" stroke-width="9" stroke-linecap="round" />
+    <line x1="256" y1="256" x2="181.00" y2="385.90" stroke="#0A0F5C" stroke-width="9" stroke-linecap="round" />
+    <line x1="256" y1="256" x2="149.93" y2="362.07" stroke="#0A0F5C" stroke-width="9" stroke-linecap="round" />
+    <line x1="256" y1="256" x2="126.10" y2="331.00" stroke="#0A0F5C" stroke-width="9" stroke-linecap="round" />
+    <line x1="256" y1="256" x2="111.11" y2="294.82" stroke="#0A0F5C" stroke-width="9" stroke-linecap="round" />
+    <line x1="256" y1="256" x2="106.00" y2="256.00" stroke="#0A0F5C" stroke-width="9" stroke-linecap="round" />
+    <line x1="256" y1="256" x2="111.11" y2="217.18" stroke="#0A0F5C" stroke-width="9" stroke-linecap="round" />
+    <line x1="256" y1="256" x2="126.10" y2="181.00" stroke="#0A0F5C" stroke-width="9" stroke-linecap="round" />
+    <line x1="256" y1="256" x2="149.93" y2="149.93" stroke="#0A0F5C" stroke-width="9" stroke-linecap="round" />
+    <line x1="256" y1="256" x2="181.00" y2="126.10" stroke="#0A0F5C" stroke-width="9" stroke-linecap="round" />
+    <line x1="256" y1="256" x2="217.18" y2="111.11" stroke="#0A0F5C" stroke-width="9" stroke-linecap="round" />
+    <line x1="256" y1="256" x2="256.00" y2="106.00" stroke="#0A0F5C" stroke-width="9" stroke-linecap="round" />
+    <line x1="256" y1="256" x2="294.82" y2="111.11" stroke="#0A0F5C" stroke-width="9" stroke-linecap="round" />
+    <line x1="256" y1="256" x2="331.00" y2="126.10" stroke="#0A0F5C" stroke-width="9" stroke-linecap="round" />
+    <line x1="256" y1="256" x2="362.07" y2="149.93" stroke="#0A0F5C" stroke-width="9" stroke-linecap="round" />
+    <line x1="256" y1="256" x2="385.90" y2="181.00" stroke="#0A0F5C" stroke-width="9" stroke-linecap="round" />
+    <line x1="256" y1="256" x2="400.89" y2="217.18" stroke="#0A0F5C" stroke-width="9" stroke-linecap="round" />
   </g>
 
-  <circle cx="256" cy="256" r="196" fill="none" stroke="#0A0F5C" stroke-width="10" />
-  <circle cx="256" cy="256" r="34" fill="#0A0F5C" />
-  <circle cx="256" cy="256" r="34" fill="none" stroke="#FF6B00" stroke-width="8" />
+  <!-- Rim of the wheel -->
+  <circle cx="256" cy="256" r="150" fill="none" stroke="#0A0F5C" stroke-width="10" />
 
-  <defs>
-    <linearGradient id="ring" x1="26" y1="26" x2="486" y2="486" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#FF8C3A" />
-      <stop offset="100%" stop-color="#DE350B" />
-    </linearGradient>
-  </defs>
+  <!-- Hub -->
+  <circle cx="256" cy="256" r="30" fill="#0A0F5C" />
+  <circle cx="256" cy="256" r="30" fill="none" stroke="#FF6B00" stroke-width="7" />
 </svg>
