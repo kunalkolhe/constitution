@@ -26,12 +26,12 @@ const MARQUEE_IMAGES = [...ERA_IMAGES, ...ERA_IMAGES];
 
 export default function EraGallery() {
   return (
-    <section className="py-24 bg-[#05050A] overflow-hidden">
+    <section className="py-24 bg-[#FFF8F0] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 mb-16 text-center">
-        <h2 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] font-bold text-white leading-[1.2] tracking-[-0.03em] mb-4">
-          The <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] to-[#FF8C3A]">Golden Era</span> of Republic
+        <h2 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] font-bold text-[#1A1A2E] leading-[1.2] tracking-[-0.03em] mb-4">
+          The <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E3A300] to-[#FF8C3A]">Golden Era</span> of Republic
         </h2>
-        <p className="font-[family-name:var(--font-sans)] text-[1.1rem] text-white/60 max-w-2xl mx-auto">
+        <p className="font-[family-name:var(--font-sans)] text-[1.1rem] text-[#1A1A2E]/60 max-w-2xl mx-auto">
           Rare historical moments that shaped the destiny of our nation.
         </p>
       </div>
@@ -48,7 +48,7 @@ export default function EraGallery() {
             {MARQUEE_IMAGES.slice(0, 14).map((src, idx) => (
               <div 
                 key={idx} 
-                className="relative w-[280px] md:w-[350px] h-[200px] md:h-[250px] rounded-2xl overflow-hidden border-2 border-white/10 shrink-0 group"
+                className="relative w-[280px] md:w-[350px] h-[200px] md:h-[250px] rounded-2xl overflow-hidden border-2 border-black/5 shadow-lg shadow-black/5 shrink-0 group"
               >
                 <Image unoptimized
                   src={src}
@@ -72,7 +72,7 @@ export default function EraGallery() {
             {MARQUEE_IMAGES.slice(14, 28).map((src, idx) => (
               <div 
                 key={idx} 
-                className="relative w-[280px] md:w-[350px] h-[200px] md:h-[250px] rounded-2xl overflow-hidden border-2 border-white/10 shrink-0 group"
+                className="relative w-[280px] md:w-[350px] h-[200px] md:h-[250px] rounded-2xl overflow-hidden border-2 border-black/5 shadow-lg shadow-black/5 shrink-0 group"
               >
                 <Image unoptimized
                   src={src}

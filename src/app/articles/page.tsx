@@ -74,35 +74,35 @@ export default function ArticlesPage() {
   );
 
   return (
-    <main className="bg-[#05050A] min-h-screen">
+    <main className="bg-[#FFF8F0] min-h-screen">
       <Navbar />
-      
+
       <div className="pt-32 pb-24 px-4 md:px-8 max-w-7xl mx-auto">
-        
+
         {/* Header */}
         <div className="text-center mb-16">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-block p-4 rounded-2xl bg-white/5 border border-white/10 mb-6"
+            className="inline-block p-4 rounded-2xl bg-white border border-gray-100 shadow-lg shadow-black/5 mb-6"
           >
             <BookOpen className="text-[#FF6B00]" size={48} />
           </motion.div>
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="font-[family-name:var(--font-display)] text-[clamp(2.5rem,6vw,4rem)] font-bold text-white leading-none mb-4"
+            className="font-[family-name:var(--font-display)] text-[clamp(2.5rem,6vw,4rem)] font-bold text-[#1A1A2E] leading-none mb-4"
           >
             All 448 Articles
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="font-[family-name:var(--font-sans)] text-white/60 text-lg max-w-3xl mx-auto"
+            className="font-[family-name:var(--font-sans)] text-[#1A1A2E]/60 text-lg max-w-3xl mx-auto"
           >
-            The Constitution is massive! To make it easy to understand, we've grouped the articles into their 25 Parts and provided a quick reference for the most important individual articles.
+            The Constitution is massive! To make it easy to understand, we&apos;ve grouped the articles into their 25 Parts and provided a quick reference for the most important individual articles.
           </motion.p>
         </div>
 
@@ -110,22 +110,22 @@ export default function ArticlesPage() {
         <div className="mb-24">
           <div className="flex flex-col md:flex-row justify-between items-end mb-8 gap-6">
             <div>
-              <h2 className="font-[family-name:var(--font-display)] text-3xl font-bold text-white mb-2">
+              <h2 className="font-[family-name:var(--font-display)] text-3xl font-bold text-[#1A1A2E] mb-2">
                 Top Important Articles
               </h2>
-              <p className="text-white/60">Search for specific key articles in plain English.</p>
+              <p className="text-[#1A1A2E]/60">Search for specific key articles in plain English.</p>
             </div>
-            
+
             <div className="relative w-full md:w-96">
               <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                <Search className="text-white/40" size={20} />
+                <Search className="text-[#1A1A2E]/40" size={20} />
               </div>
               <input
                 type="text"
                 placeholder="Search by article number or keyword..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-[#FF6B00] transition-colors shadow-inner shadow-black/50"
+                className="w-full pl-12 pr-4 py-3 bg-white border border-gray-200 rounded-xl text-[#1A1A2E] placeholder-[#1A1A2E]/40 focus:outline-none focus:border-[#FF6B00] transition-colors shadow-sm"
               />
             </div>
           </div>
@@ -138,25 +138,25 @@ export default function ArticlesPage() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: idx * 0.05 }}
-                  className="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 hover:border-white/30 transition-colors shadow-lg shadow-black/20"
+                  className="bg-white p-6 rounded-2xl border border-gray-100 hover:border-black/20 transition-colors shadow-lg shadow-black/5"
                 >
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="px-3 py-1 bg-[#138808]/20 text-[#138808] border border-[#138808]/30 font-bold rounded-lg text-sm">
+                    <span className="px-3 py-1 bg-[#138808]/10 text-[#138808] border border-[#138808]/20 font-bold rounded-lg text-sm">
                       Article {art.art}
                     </span>
-                    <h3 className="font-[family-name:var(--font-display)] font-bold text-white/90 truncate">
+                    <h3 className="font-[family-name:var(--font-display)] font-bold text-[#1A1A2E] truncate">
                       {art.title}
                     </h3>
                   </div>
-                  <p className="text-sm text-white/60 leading-relaxed">
+                  <p className="text-sm text-[#1A1A2E]/60 leading-relaxed">
                     {art.desc}
                   </p>
                 </motion.div>
               ))}
             </div>
           ) : (
-            <div className="text-center py-12 bg-white/5 rounded-2xl border border-white/10">
-              <p className="text-white/60">No articles found matching "{searchTerm}".</p>
+            <div className="text-center py-12 bg-white rounded-2xl border border-gray-100">
+              <p className="text-[#1A1A2E]/60">No articles found matching &quot;{searchTerm}&quot;.</p>
             </div>
           )}
         </div>
@@ -164,33 +164,33 @@ export default function ArticlesPage() {
         {/* 25 Parts Section */}
         <div>
           <div className="text-center mb-12">
-            <h2 className="font-[family-name:var(--font-display)] text-3xl font-bold text-white mb-2">
+            <h2 className="font-[family-name:var(--font-display)] text-3xl font-bold text-[#1A1A2E] mb-2">
               The 25 Parts of the Constitution
             </h2>
-            <p className="text-white/60 max-w-2xl mx-auto">
+            <p className="text-[#1A1A2E]/60 max-w-2xl mx-auto">
               The 448 articles are logically grouped into these 25 Parts. Here is what each Part covers in simple language.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {CONSTITUTION_PARTS.map((part, idx) => (
-              <div key={idx} className="flex gap-4 p-5 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-colors group">
+              <div key={idx} className="flex gap-4 p-5 bg-white border border-gray-100 rounded-2xl hover:bg-[#FFF0E0]/40 hover:border-black/10 transition-colors group">
                 <div className="shrink-0 mt-1">
-                  <div className="w-10 h-10 rounded-full bg-[#0A0F5C]/40 border border-[#0A0F5C] flex items-center justify-center text-[#FF6B00]">
+                  <div className="w-10 h-10 rounded-full bg-[#0A0F5C]/10 border border-[#0A0F5C]/30 flex items-center justify-center text-[#FF6B00]">
                     <Layers size={20} />
                   </div>
                 </div>
                 <div>
                   <div className="flex items-baseline gap-3 mb-1">
-                    <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-white group-hover:text-[#FF6B00] transition-colors">
+                    <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-[#1A1A2E] group-hover:text-[#FF6B00] transition-colors">
                       {part.title}
                     </h3>
-                    <span className="text-xs font-bold text-white/40 uppercase tracking-wider">
+                    <span className="text-xs font-bold text-[#1A1A2E]/40 uppercase tracking-wider">
                       {part.part}
                     </span>
                   </div>
-                  <p className="text-xs text-white/40 font-mono mb-2">Articles {part.articles}</p>
-                  <p className="text-sm text-white/70 leading-relaxed">
+                  <p className="text-xs text-[#1A1A2E]/40 font-mono mb-2">Articles {part.articles}</p>
+                  <p className="text-sm text-[#1A1A2E]/70 leading-relaxed">
                     {part.desc}
                   </p>
                 </div>

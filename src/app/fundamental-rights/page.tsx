@@ -136,15 +136,15 @@ export default function FundamentalRightsPage() {
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
 
   return (
-    <main className="bg-[#05050A] min-h-screen">
+    <main className="bg-[#FFF8F0] min-h-screen">
       <Navbar />
-      
+
       <div className="pt-32 pb-24 px-4 md:px-8 max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h1 className="font-[family-name:var(--font-display)] text-[clamp(2.5rem,6vw,4rem)] font-bold text-white leading-none mb-4">
+          <h1 className="font-[family-name:var(--font-display)] text-[clamp(2.5rem,6vw,4rem)] font-bold text-[#1A1A2E] leading-none mb-4">
             Fundamental Rights
           </h1>
-          <p className="font-[family-name:var(--font-sans)] text-white/60 text-lg mb-8">
+          <p className="font-[family-name:var(--font-sans)] text-[#1A1A2E]/60 text-lg mb-8">
             Your unbreakable shield as an Indian citizen
           </p>
           <AudioPlayer text={AUDIO_TEXT} />
@@ -167,20 +167,20 @@ export default function FundamentalRightsPage() {
                 style={{ transformStyle: 'preserve-3d' }}
               >
                 {/* FRONT */}
-                <div 
-                  className="absolute inset-0 backface-hidden bg-white/5 backdrop-blur-md rounded-2xl shadow-lg shadow-black/20 border border-white/10 p-8 flex flex-col items-center justify-center text-center group-hover:border-white/30 transition-colors"
+                <div
+                  className="absolute inset-0 backface-hidden bg-white rounded-2xl shadow-lg shadow-black/5 border border-gray-100 p-8 flex flex-col items-center justify-center text-center group-hover:border-black/20 transition-colors"
                   style={{ backfaceVisibility: 'hidden' }}
                 >
-                  <div className="mb-6 p-4 rounded-xl bg-white/5 border border-white/5" style={{ color: right.color }}>
+                  <div className="mb-6 p-4 rounded-xl bg-black/[0.03] border border-black/5" style={{ color: right.color }}>
                     {right.icon}
                   </div>
                   <span className="text-sm font-semibold tracking-widest uppercase mb-2" style={{ color: right.color }}>
                     {right.articles}
                   </span>
-                  <h3 className="font-[family-name:var(--font-display)] text-2xl font-bold text-white/90 mb-4 group-hover:text-white transition-colors">
+                  <h3 className="font-[family-name:var(--font-display)] text-2xl font-bold text-[#1A1A2E] mb-4 transition-colors">
                     {right.name}
                   </h3>
-                  <div className="mt-auto px-4 py-2 bg-white/5 rounded-full text-xs font-semibold text-white/50 uppercase tracking-wide">
+                  <div className="mt-auto px-4 py-2 bg-black/[0.03] rounded-full text-xs font-semibold text-[#1A1A2E]/50 uppercase tracking-wide">
                     Tap to explore
                   </div>
                 </div>
@@ -202,7 +202,7 @@ export default function FundamentalRightsPage() {
                   
                   <div className={`mt-auto p-4 rounded-xl border ${right.id === 6 ? 'bg-white/30 border-black/10' : 'bg-black/10 border-white/10'}`}>
                     <span className="block text-xs font-bold uppercase tracking-wider mb-2 opacity-80">Real Life Example</span>
-                    <p className="text-sm italic">"{right.example}"</p>
+                    <p className="text-sm italic">&quot;{right.example}&quot;</p>
                   </div>
                 </div>
               </motion.div>
@@ -213,44 +213,44 @@ export default function FundamentalRightsPage() {
         {/* Detailed Articles Section */}
         <div className="mt-32">
           <div className="text-center mb-12">
-            <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl font-bold text-[#1A1A2E] mb-4">
               Detailed Fundamental Rights
             </h2>
-            <p className="font-[family-name:var(--font-sans)] text-white/60 max-w-2xl mx-auto">
+            <p className="font-[family-name:var(--font-sans)] text-[#1A1A2E]/60 max-w-2xl mx-auto">
               A comprehensive breakdown of all the specific articles that make up your fundamental rights under the Constitution.
             </p>
           </div>
 
           <div className="max-w-4xl mx-auto space-y-4">
             {DETAILED_RIGHTS.map((section, idx) => (
-              <div key={idx} className="bg-white/5 backdrop-blur-md rounded-2xl shadow-lg shadow-black/20 border border-white/10 overflow-hidden">
-                <button 
+              <div key={idx} className="bg-white rounded-2xl shadow-lg shadow-black/5 border border-gray-100 overflow-hidden">
+                <button
                   onClick={() => setExpandedCategory(expandedCategory === section.category ? null : section.category)}
-                  className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                  className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-black/[0.02] transition-colors"
                 >
-                  <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-white/90">
+                  <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-[#1A1A2E]">
                     {section.category}
                   </h3>
-                  <div className={`text-white/60 transform transition-transform ${expandedCategory === section.category ? 'rotate-180' : ''}`}>
+                  <div className={`text-[#1A1A2E]/60 transform transition-transform ${expandedCategory === section.category ? 'rotate-180' : ''}`}>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
                 </button>
-                
+
                 {expandedCategory === section.category && (
-                  <div className="px-6 pb-6 pt-2 border-t border-white/10 bg-black/20">
+                  <div className="px-6 pb-6 pt-2 border-t border-black/5 bg-[#FFF8F0]">
                     <div className="grid gap-6 mt-4">
                       {section.articles.map((art, aIdx) => (
                         <div key={aIdx} className="flex flex-col md:flex-row gap-4 md:gap-6">
                           <div className="md:w-32 shrink-0">
-                            <span className="inline-block px-3 py-1 bg-white/10 text-white/90 text-sm font-semibold rounded-lg border border-white/5">
+                            <span className="inline-block px-3 py-1 bg-white text-[#1A1A2E] text-sm font-semibold rounded-lg border border-black/5">
                               {art.article}
                             </span>
                           </div>
                           <div>
-                            <h4 className="font-bold text-white/90 text-lg mb-2">{art.title}</h4>
-                            <p className="text-white/60 leading-relaxed text-sm">{art.desc}</p>
+                            <h4 className="font-bold text-[#1A1A2E] text-lg mb-2">{art.title}</h4>
+                            <p className="text-[#1A1A2E]/60 leading-relaxed text-sm">{art.desc}</p>
                           </div>
                         </div>
                       ))}
@@ -265,24 +265,24 @@ export default function FundamentalRightsPage() {
         {/* Other Constitutional Rights */}
         <div className="mt-32">
           <div className="text-center mb-12">
-            <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl font-bold text-[#1A1A2E] mb-4">
               Other Constitutional Rights
             </h2>
-            <p className="font-[family-name:var(--font-sans)] text-white/60 max-w-2xl mx-auto">
+            <p className="font-[family-name:var(--font-sans)] text-[#1A1A2E]/60 max-w-2xl mx-auto">
               Besides Fundamental Rights, the Constitution guarantees other important legal and constitutional rights.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {OTHER_CONSTITUTIONAL_RIGHTS.map((right, idx) => (
-              <div key={idx} className="bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 shadow-lg shadow-black/20 hover:border-white/30 transition-colors">
-                <span className="inline-block px-3 py-1 bg-[#138808]/20 text-[#138808] border border-[#138808]/30 text-sm font-semibold rounded-lg mb-4">
+              <div key={idx} className="bg-white p-8 rounded-2xl border border-gray-100 shadow-lg shadow-black/5 hover:border-black/20 transition-colors">
+                <span className="inline-block px-3 py-1 bg-[#138808]/10 text-[#138808] border border-[#138808]/20 text-sm font-semibold rounded-lg mb-4">
                   {right.article}
                 </span>
-                <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-white/90 mb-3">
+                <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-[#1A1A2E] mb-3">
                   {right.title}
                 </h3>
-                <p className="text-white/60 text-sm leading-relaxed">
+                <p className="text-[#1A1A2E]/60 text-sm leading-relaxed">
                   {right.desc}
                 </p>
               </div>
@@ -292,16 +292,16 @@ export default function FundamentalRightsPage() {
 
         {/* Timeline of Landmark Cases */}
         <div className="mt-32">
-          <h2 className="font-[family-name:var(--font-display)] text-3xl font-bold text-white mb-8 text-center">
+          <h2 className="font-[family-name:var(--font-display)] text-3xl font-bold text-[#1A1A2E] mb-8 text-center">
             Landmark Supreme Court Cases
           </h2>
-          
+
           <div className="flex overflow-x-auto gap-6 pb-8 hide-scrollbar px-4 snap-x">
             {SC_CASES.map((sc, i) => (
-              <div key={i} className="min-w-[280px] bg-white/5 backdrop-blur-md p-6 rounded-2xl shadow-lg shadow-black/20 border border-white/10 snap-start hover:border-white/30 transition-colors">
+              <div key={i} className="min-w-[280px] bg-white p-6 rounded-2xl shadow-lg shadow-black/5 border border-gray-100 snap-start hover:border-black/20 transition-colors">
                 <div className="text-[#FF6B00] font-bold text-2xl mb-2">{sc.year}</div>
-                <h4 className="font-bold text-white/90 text-lg mb-2">{sc.case}</h4>
-                <p className="text-sm text-white/60">{sc.desc}</p>
+                <h4 className="font-bold text-[#1A1A2E] text-lg mb-2">{sc.case}</h4>
+                <p className="text-sm text-[#1A1A2E]/60">{sc.desc}</p>
               </div>
             ))}
           </div>

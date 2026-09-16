@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { motion, useTransform, MotionValue } from 'framer-motion';
 import { Rocket, Zap } from 'lucide-react';
 
@@ -41,7 +42,7 @@ export default function HeroOverlay({ scrollYProgress }: HeroOverlayProps) {
         className="absolute bottom-[10vh] left-[8vw] will-change-[opacity,transform] max-w-[80vw]"
       >
         <p className="font-[family-name:var(--font-sans)] text-[0.85rem] tracking-[0.25em] font-semibold text-[#FF6B00] mb-2 uppercase drop-shadow-lg">
-          Bhartiya Savidhan
+          Bhartiya Samvidhan
         </p>
         <h2 className="font-[family-name:var(--font-display)] font-extrabold text-[clamp(3rem,9vw,8rem)] leading-[1.1] tracking-[-0.03em] text-[#FFF8F0] mb-4 drop-shadow-[0_4px_24px_rgba(0,0,0,0.8)]">
           Samajho Apna Adhikar
@@ -68,19 +69,19 @@ export default function HeroOverlay({ scrollYProgress }: HeroOverlayProps) {
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center w-full px-4 will-change-[opacity,transform]"
       >
         <p className="font-[family-name:var(--font-sans)] text-[0.9rem] tracking-[0.2em] font-medium text-[#FF6B00] uppercase mb-4 text-center drop-shadow-lg">
-          India's Most Fun Way to Learn Civics
+          India&apos;s Most Fun Way to Learn Civics
         </p>
         <h2 className="font-[family-name:var(--font-display)] font-extrabold text-[clamp(2rem,5.5vw,5rem)] leading-[1.1] tracking-[-0.03em] text-[#FFF8F0] text-center mb-6 drop-shadow-[0_4px_24px_rgba(0,0,0,0.8)]">
           Every Indian deserves to<br/>know their rights.
         </h2>
         
         <div className="flex flex-col sm:flex-row gap-4 mt-8 pointer-events-auto">
-          <a href="/roadmap" className="bg-[#FF6B00] hover:bg-[#FF8C3A] text-white font-semibold rounded-full px-8 py-4 transition-colors shadow-lg shadow-[#FF6B00]/40 flex items-center justify-center gap-2">
+          <Link href="/explore" className="bg-[#FF6B00] hover:bg-[#FF8C3A] text-white font-semibold rounded-full px-8 py-4 transition-colors shadow-lg shadow-[#FF6B00]/40 flex items-center justify-center gap-2">
             <Rocket size={18} /> Start Exploring
-          </a>
-          <a href="/quiz" className="border-2 border-white/30 hover:bg-white hover:text-black text-white backdrop-blur-md font-semibold rounded-full px-8 py-4 transition-colors flex items-center justify-center gap-2">
+          </Link>
+          <Link href="/quiz" className="border-2 border-white/30 hover:bg-white hover:text-black text-white backdrop-blur-md font-semibold rounded-full px-8 py-4 transition-colors flex items-center justify-center gap-2">
             <Zap size={18} /> Take a Quiz
-          </a>
+          </Link>
         </div>
         
         <p className="font-[family-name:var(--font-sans)] text-[0.9rem] text-white/50 tracking-[0.12em] mt-8 text-center uppercase drop-shadow-sm">

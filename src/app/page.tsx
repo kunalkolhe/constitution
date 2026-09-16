@@ -24,7 +24,7 @@ export default function Home() {
   });
 
   return (
-    <main className="bg-[#05050A]">
+    <main className="bg-[#FFF8F0]">
       <Navbar />
       
       {/* Cinematic Scroll Hero Section */}

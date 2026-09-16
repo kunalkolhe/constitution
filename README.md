@@ -1,4 +1,4 @@
-# 🇮🇳 Bhartiya Savidhan (Samajho Apna Adhikar)
+# 🇮🇳 Bhartiya Samvidhan (Samajho Apna Adhikar)
 
 A stunning, interactive, and educational web experience designed to make the Constitution of India accessible to everyone. Built with a deeply cinematic dark theme, immersive scroll animations, and a rich educational feature set, this project brings the world's longest written constitution to life.
 

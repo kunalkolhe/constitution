@@ -41,18 +41,18 @@ const EMERGENCIES = [
 
 export default function EmergencyProvisionsPage() {
   return (
-    <main className="bg-[#05050A] min-h-screen">
+    <main className="bg-[#FFF8F0] min-h-screen">
       <Navbar />
-      
+
       <div className="pt-32 pb-24 px-4 md:px-8 max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <span className="text-[#E3A300] font-bold tracking-widest uppercase text-sm mb-4 block flex items-center justify-center gap-2">
             <AlertTriangle size={16} /> Part XVIII • Articles 352–360
           </span>
-          <h1 className="font-[family-name:var(--font-display)] text-[clamp(2.5rem,5vw,3.5rem)] font-bold text-white leading-none mb-6">
+          <h1 className="font-[family-name:var(--font-display)] text-[clamp(2.5rem,5vw,3.5rem)] font-bold text-[#1A1A2E] leading-none mb-6">
             Emergency Provisions
           </h1>
-          <p className="font-[family-name:var(--font-sans)] text-white/60 text-lg max-w-3xl mx-auto">
+          <p className="font-[family-name:var(--font-sans)] text-[#1A1A2E]/60 text-lg max-w-3xl mx-auto">
             Extraordinary powers granted to the President to deal with abnormal situations, safeguarding the sovereignty, security, and stability of the country.
           </p>
         </div>
@@ -64,7 +64,7 @@ export default function EmergencyProvisionsPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-white/5 backdrop-blur-md rounded-3xl overflow-hidden shadow-lg shadow-black/20 border border-white/10 hover:border-white/30 transition-colors flex flex-col group"
+              className="bg-white rounded-3xl overflow-hidden shadow-lg shadow-black/5 border border-gray-100 hover:border-black/20 transition-colors flex flex-col group"
             >
               <div 
                 className="h-32 flex items-center justify-center relative overflow-hidden"
@@ -94,24 +94,24 @@ export default function EmergencyProvisionsPage() {
                   {em.article}
                 </span>
                 
-                <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold text-white/90 mb-6 group-hover:text-white transition-colors">
+                <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold text-[#1A1A2E] mb-6 transition-colors">
                   {em.type}
                 </h2>
-                
+
                 <div className="space-y-6 flex-grow">
                   <div>
-                    <h3 className="text-xs font-bold text-white/40 uppercase tracking-wider mb-2">Grounds for Declaration</h3>
-                    <p className="text-white/80 text-sm leading-relaxed">{em.grounds}</p>
+                    <h3 className="text-xs font-bold text-[#1A1A2E]/40 uppercase tracking-wider mb-2">Grounds for Declaration</h3>
+                    <p className="text-[#1A1A2E]/80 text-sm leading-relaxed">{em.grounds}</p>
                   </div>
                   <div>
-                    <h3 className="text-xs font-bold text-white/40 uppercase tracking-wider mb-2">Impact</h3>
-                    <p className="text-white/80 text-sm leading-relaxed">{em.impact}</p>
+                    <h3 className="text-xs font-bold text-[#1A1A2E]/40 uppercase tracking-wider mb-2">Impact</h3>
+                    <p className="text-[#1A1A2E]/80 text-sm leading-relaxed">{em.impact}</p>
                   </div>
                 </div>
-                
-                <div className="mt-8 pt-6 border-t border-white/10">
-                  <h3 className="text-xs font-bold text-white/40 uppercase tracking-wider mb-2">Historical Context</h3>
-                  <p className="text-sm font-medium italic text-white/60">{em.history}</p>
+
+                <div className="mt-8 pt-6 border-t border-black/10">
+                  <h3 className="text-xs font-bold text-[#1A1A2E]/40 uppercase tracking-wider mb-2">Historical Context</h3>
+                  <p className="text-sm font-medium italic text-[#1A1A2E]/60">{em.history}</p>
                 </div>
               </div>
             </motion.div>

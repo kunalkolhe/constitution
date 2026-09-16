@@ -17,7 +17,7 @@ export default function LanguageStrip() {
       <div className="max-w-5xl mx-auto text-center">
         
         {/* Label */}
-        <h2 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,4rem)] font-bold text-white tracking-[-0.03em] mb-12 flex items-center justify-center gap-4">
+        <h2 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,4rem)] font-bold text-[#1A1A2E] tracking-[-0.03em] mb-12 flex items-center justify-center gap-4">
           Read in Your Language <Globe className="text-[#FF6B00]" size={48} />
         </h2>
         
@@ -30,7 +30,7 @@ export default function LanguageStrip() {
               className={`whitespace-nowrap px-6 py-3 rounded-full text-lg transition-all duration-300 font-[family-name:var(--font-devanagari)] border ${
                 language === lang 
                   ? 'bg-[#FF6B00] border-[#FF6B00] text-white font-semibold shadow-[0_0_15px_rgba(255,107,0,0.4)] transform scale-105' 
-                  : 'bg-white/5 border-white/10 text-white/80 hover:border-white/30 hover:text-white hover:bg-white/10'
+                  : 'bg-white border-gray-200 text-[#1A1A2E]/70 shadow-sm hover:border-[#FF6B00]/40 hover:text-[#1A1A2E] hover:bg-[#FFF0E0]'
               }`}
             >
               {lang}

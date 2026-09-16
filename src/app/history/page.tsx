@@ -6,7 +6,7 @@ import EraGallery from '@/components/history/EraGallery';
 
 export default function HistoryPage() {
   return (
-    <main className="min-h-screen bg-[#05050A] pb-24">
+    <main className="min-h-screen bg-[#FFF8F0] pb-24">
       {/* PAGE HEADER (LAYOUT A) */}
       <section className="relative w-full h-[400px] overflow-hidden">
         <Image unoptimized 
@@ -31,7 +31,7 @@ export default function HistoryPage() {
 
       {/* LEADER CARDS */}
       <section className="max-w-5xl mx-auto mt-16 mb-16 px-6">
-        <h2 className="text-center font-[family-name:var(--font-baloo-2)] text-2xl font-bold text-white mb-8">
+        <h2 className="text-center font-[family-name:var(--font-baloo-2)] text-2xl font-bold text-[#1A1A2E] mb-8">
           The Architects of the Constitution
         </h2>
         <div className="flex gap-6 overflow-x-auto pb-6 justify-start lg:justify-center px-4 snap-x hide-scrollbar">
@@ -70,30 +70,29 @@ export default function HistoryPage() {
       </section>
 
       {/* ORIGINAL PREAMBLE FEATURE */}
-      <section className="bg-white/5 border-y border-white/10 backdrop-blur-md py-16 px-6">
+      <section className="bg-white border-y border-gray-100 py-16 px-6">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* LAYOUT B Pattern Style */}
-          <div className="rounded-xl overflow-hidden h-[400px] relative border-2 border-[#FFD700]/30">
-            <Image unoptimized 
+          <div className="rounded-xl overflow-hidden h-[400px] relative border-2 border-[#FFD700]/40 bg-[#FFF8F0]">
+            <Image unoptimized
               src="/images/The_Constitution_of_..._imresizer_1765630728674.jpg"
               alt="Original handwritten and illustrated Preamble of the Constitution of India"
-              fill 
+              fill
               style={{ objectFit: 'contain', objectPosition: 'center' }}
-              className="bg-amber-50/5" 
             />
-            <p className="absolute bottom-4 left-0 right-0 text-center font-[family-name:var(--font-inter)] text-xs text-white/40 italic px-4 drop-shadow-md">
+            <p className="absolute bottom-4 left-0 right-0 text-center font-[family-name:var(--font-inter)] text-xs text-[#1A1A2E]/50 italic px-4">
               Original Preamble — calligraphy by Prem Behari Narain Raizada.
             </p>
           </div>
-          
+
           <div>
-            <span className="inline-block px-3 py-1 bg-[#FF6B00]/20 text-[#FF6B00] rounded-full text-xs font-bold tracking-wider mb-4">
+            <span className="inline-block px-3 py-1 bg-[#FF6B00]/10 text-[#FF6B00] rounded-full text-xs font-bold tracking-wider mb-4">
               THE ORIGINAL DOCUMENT
             </span>
-            <h2 className="font-[family-name:var(--font-baloo-2)] text-3xl font-extrabold text-white mb-6">
+            <h2 className="font-[family-name:var(--font-baloo-2)] text-3xl font-extrabold text-[#1A1A2E] mb-6">
               A Work of Art and Law
             </h2>
-            <div className="space-y-4 font-[family-name:var(--font-inter)] text-base text-white/70 leading-[1.8]">
+            <div className="space-y-4 font-[family-name:var(--font-inter)] text-base text-[#1A1A2E]/70 leading-[1.8]">
               <p>
                 The Constitution of India is not just a legal document — it is a work of art. 
                 Handwritten on parchment by calligrapher Prem Behari Narain Raizada, 
@@ -110,16 +109,16 @@ export default function HistoryPage() {
             
             <div className="flex flex-wrap gap-8 mt-8">
               <div>
-                <div className="font-[family-name:var(--font-baloo-2)] text-2xl font-extrabold text-[#FFD700]">234</div>
-                <div className="font-[family-name:var(--font-inter)] text-xs text-white/50">Pages</div>
+                <div className="font-[family-name:var(--font-baloo-2)] text-2xl font-extrabold text-[#E3A300]">234</div>
+                <div className="font-[family-name:var(--font-inter)] text-xs text-[#1A1A2E]/50">Pages</div>
               </div>
               <div>
-                <div className="font-[family-name:var(--font-baloo-2)] text-2xl font-extrabold text-[#FFD700]">13 kg</div>
-                <div className="font-[family-name:var(--font-inter)] text-xs text-white/50">Weight</div>
+                <div className="font-[family-name:var(--font-baloo-2)] text-2xl font-extrabold text-[#E3A300]">13 kg</div>
+                <div className="font-[family-name:var(--font-inter)] text-xs text-[#1A1A2E]/50">Weight</div>
               </div>
               <div>
-                <div className="font-[family-name:var(--font-baloo-2)] text-2xl font-extrabold text-[#FFD700]">284</div>
-                <div className="font-[family-name:var(--font-inter)] text-xs text-white/50">Signatories</div>
+                <div className="font-[family-name:var(--font-baloo-2)] text-2xl font-extrabold text-[#E3A300]">284</div>
+                <div className="font-[family-name:var(--font-inter)] text-xs text-[#1A1A2E]/50">Signatories</div>
               </div>
             </div>
           </div>
@@ -128,7 +127,7 @@ export default function HistoryPage() {
 
       {/* TIMELINE */}
       <section className="max-w-4xl mx-auto py-24 px-6 relative">
-        <h2 className="text-center font-[family-name:var(--font-baloo-2)] text-3xl font-bold text-white mb-12">
+        <h2 className="text-center font-[family-name:var(--font-baloo-2)] text-3xl font-bold text-[#1A1A2E] mb-12">
           The Journey — 1946 to 1950
         </h2>
         

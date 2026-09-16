@@ -11,20 +11,30 @@ interface AudioPlayerProps {
 export default function AudioPlayer({ text }: AudioPlayerProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [synth, setSynth] = useState<SpeechSynthesis | null>(null);
+  const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // Deliberately deferred to an effect: speechSynthesis is a browser-only
+    // API, so this flag must start false on the server and flip to true only
+    // after mount to avoid a hydration mismatch.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
     if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-      setSynth(window.speechSynthesis);
+      const s = window.speechSynthesis;
+      setSynth(s);
+
+      // Chrome loads voices asynchronously — getVoices() can return [] on the
+      // very first call, so also listen for the voiceschanged event.
+      const updateVoices = () => setVoices(s.getVoices());
+      updateVoices();
+      s.addEventListener('voiceschanged', updateVoices);
+
+      return () => {
+        s.removeEventListener('voiceschanged', updateVoices);
+        s.cancel();
+      };
     }
-    
-    // Cleanup on unmount
-    return () => {
-      if (typeof window !== 'undefined' && window.speechSynthesis) {
-        window.speechSynthesis.cancel();
-      }
-    };
   }, []);
 
   const togglePlay = () => {
@@ -41,9 +51,8 @@ export default function AudioPlayer({ text }: AudioPlayerProps) {
       synth.cancel();
       
       const utterance = new SpeechSynthesisUtterance(text);
-      
+
       // Try to find a good English voice, prefer Indian English if available
-      const voices = synth.getVoices();
       const preferredVoice = voices.find(v => v.lang === 'en-IN') || voices.find(v => v.lang.startsWith('en-')) || voices[0];
       
       if (preferredVoice) {
@@ -76,9 +85,9 @@ export default function AudioPlayer({ text }: AudioPlayerProps) {
       <button
         onClick={togglePlay}
         className={`relative flex items-center gap-3 px-6 py-3 rounded-full font-bold transition-all ${
-          isPlaying 
-            ? 'bg-[#FF6B00] text-white shadow-lg shadow-[#FF6B00]/30' 
-            : 'bg-white/10 text-white hover:bg-white/20 border border-white/10 hover:border-white/30'
+          isPlaying
+            ? 'bg-[#FF6B00] text-white shadow-lg shadow-[#FF6B00]/30'
+            : 'bg-white text-[#1A1A2E] shadow-md shadow-black/5 hover:bg-[#FFF0E0] border border-gray-200 hover:border-[#FF6B00]/40'
         }`}
       >
         {isPlaying ? (

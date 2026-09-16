@@ -50,9 +50,9 @@ function StoryCard({ beat, index }: { beat: typeof STORY_BEATS[0], index: number
     >
       {/* CENTER NODE (Appears first on mobile) */}
       <div 
-        className="z-10 flex-shrink-0 w-[90px] h-[90px] md:w-[120px] md:h-[120px] rounded-full flex items-center justify-center border border-white/10 text-5xl bg-[#05050A] order-1 md:order-none md:col-start-2 md:row-start-1"
-        style={{ 
-          background: `radial-gradient(circle at center, ${beat.color}20, #05050A 70%)`,
+        className="z-10 flex-shrink-0 w-[90px] h-[90px] md:w-[120px] md:h-[120px] rounded-full flex items-center justify-center border border-black/5 text-5xl bg-white shadow-lg shadow-black/5 order-1 md:order-none md:col-start-2 md:row-start-1"
+        style={{
+          background: `radial-gradient(circle at center, ${beat.color}20, #FFF8F0 70%)`,
           boxShadow: `0 0 50px ${beat.color}15`
         }}
       >
@@ -71,10 +71,10 @@ function StoryCard({ beat, index }: { beat: typeof STORY_BEATS[0], index: number
         >
           {beat.year}
         </div>
-        <h3 className="font-[family-name:var(--font-display)] text-[clamp(1.5rem,3vw,2.2rem)] font-bold text-white leading-tight mb-4">
+        <h3 className="font-[family-name:var(--font-display)] text-[clamp(1.5rem,3vw,2.2rem)] font-bold text-[#1A1A2E] leading-tight mb-4">
           {beat.headline}
         </h3>
-        <p className={`font-[family-name:var(--font-sans)] text-white/60 text-[1rem] leading-[1.8] max-w-lg mx-auto ${
+        <p className={`font-[family-name:var(--font-sans)] text-[#1A1A2E]/60 text-[1rem] leading-[1.8] max-w-lg mx-auto ${
           isLeft ? 'md:ml-auto md:mr-0 md:text-right' : 'md:mr-auto md:ml-0 md:text-left'
         }`}>
           {beat.body}
@@ -90,7 +90,7 @@ export default function WhyConstitution() {
   const lineHeight = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
 
   return (
-    <section ref={containerRef} className="relative py-24 md:py-40 px-4 bg-[#05050A] overflow-hidden">
+    <section ref={containerRef} className="relative py-24 md:py-40 px-4 bg-[#FFF8F0] overflow-hidden">
       {/* Background ambient glows */}
       <div className="absolute top-1/4 left-0 w-[500px] h-[500px] rounded-full opacity-5 blur-[100px] pointer-events-none" 
         style={{ background: 'radial-gradient(circle, #FF6B00, transparent)' }} />
@@ -106,13 +106,13 @@ export default function WhyConstitution() {
           className="text-center mb-20"
         >
           <p className="text-[#FF6B00] font-bold uppercase tracking-[0.3em] text-sm mb-4">The Story</p>
-          <h2 className="font-[family-name:var(--font-display)] text-[clamp(2.5rem,5vw,4rem)] font-bold text-white leading-tight tracking-tight">
+          <h2 className="font-[family-name:var(--font-display)] text-[clamp(2.5rem,5vw,4rem)] font-bold text-[#1A1A2E] leading-tight tracking-tight">
             Why Does India Need<br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B00] via-[#FFD700] to-[#138808]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B00] via-[#E3A300] to-[#138808]">
               a Constitution?
             </span>
           </h2>
-          <p className="mt-6 font-[family-name:var(--font-sans)] text-white/50 text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-6 font-[family-name:var(--font-sans)] text-[#1A1A2E]/60 text-lg max-w-2xl mx-auto leading-relaxed">
             It is not just a legal document. It is a 75-year-old promise — written in the ashes of colonialism — to build a nation where every person has dignity.
           </p>
         </motion.div>
@@ -120,8 +120,8 @@ export default function WhyConstitution() {
         {/* Story Timeline */}
         <div className="relative">
           {/* Animated vertical line (desktop) */}
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[1px] bg-white/5 -translate-x-1/2">
-            <motion.div 
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[1px] bg-black/10 -translate-x-1/2">
+            <motion.div
               className="w-full bg-gradient-to-b from-[#FF6B00] via-[#0052CC] to-[#138808]"
               style={{ height: lineHeight }}
             />
@@ -139,9 +139,9 @@ export default function WhyConstitution() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-24 text-center border-t border-white/5 pt-16"
+          className="mt-24 text-center border-t border-black/10 pt-16"
         >
-          <p className="font-[family-name:var(--font-display)] text-[clamp(1.2rem,3vw,2rem)] text-white/80 italic leading-relaxed max-w-3xl mx-auto">
+          <p className="font-[family-name:var(--font-display)] text-[clamp(1.2rem,3vw,2rem)] text-[#1A1A2E]/80 italic leading-relaxed max-w-3xl mx-auto">
             &ldquo;The Constitution is not a mere lawyers&apos; document, it is a vehicle of Life, and its spirit is always the spirit of Age.&rdquo;
           </p>
           <p className="mt-4 text-[#FF6B00] font-bold text-sm tracking-widest uppercase">

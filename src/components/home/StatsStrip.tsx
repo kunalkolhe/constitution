@@ -42,15 +42,15 @@ const StatCounter = ({ end, label }: StatProps) => {
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
-        className="font-[family-name:var(--font-display)] text-[clamp(3.5rem,7vw,5.5rem)] font-extrabold text-[#FFD700] leading-none"
+        className="font-[family-name:var(--font-display)] text-[clamp(3.5rem,7vw,5.5rem)] font-extrabold text-[#FF6B00] leading-none"
       >
         {count}
       </motion.div>
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : {}}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="font-[family-name:var(--font-sans)] text-[1rem] font-medium text-[rgba(255,255,255,0.85)] mt-2"
+        className="font-[family-name:var(--font-sans)] text-[1rem] font-medium text-[#1A1A2E]/70 mt-2"
       >
         {label}
       </motion.div>
@@ -60,7 +60,7 @@ const StatCounter = ({ end, label }: StatProps) => {
 
 export default function StatsStrip() {
   return (
-    <section className="w-full bg-gradient-to-r from-[#0a0a0f] to-[#1a1a2e] py-16 px-4 relative z-20 border-t border-white/5">
+    <section className="w-full bg-gradient-to-r from-[#FFF0E0] to-[#F5EDE0] py-16 px-4 relative z-20 border-t border-black/5">
       <div className="max-w-7xl mx-auto flex flex-wrap justify-center gap-[clamp(3rem,8vw,8rem)]">
         <StatCounter end={448} label="Articles" />
         <StatCounter end={12} label="Schedules" />

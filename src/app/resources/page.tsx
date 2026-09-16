@@ -80,7 +80,7 @@ const itemVariants: Variants = {
 
 export default function ResourcesPage() {
   return (
-    <main className="bg-[#05050A] min-h-screen">
+    <main className="bg-[#FFF8F0] min-h-screen">
       <Navbar />
       
       <div className="pt-32 pb-24 px-4 md:px-8 max-w-5xl mx-auto">
@@ -88,7 +88,7 @@ export default function ResourcesPage() {
           <motion.h1 
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="font-[family-name:var(--font-display)] text-[clamp(2.5rem,6vw,4rem)] font-bold text-white leading-none mb-4"
+            className="font-[family-name:var(--font-display)] text-[clamp(2.5rem,6vw,4rem)] font-bold text-[#1A1A2E] leading-none mb-4"
           >
             Resources & Links
           </motion.h1>
@@ -96,7 +96,7 @@ export default function ResourcesPage() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="font-[family-name:var(--font-sans)] text-white/60 text-lg max-w-2xl mx-auto"
+            className="font-[family-name:var(--font-sans)] text-[#1A1A2E]/60 text-lg max-w-2xl mx-auto"
           >
             Dive deeper into the Indian Constitution with these official documents, documentaries, and community resources.
           </motion.p>
@@ -111,10 +111,10 @@ export default function ResourcesPage() {
           {RESOURCES.map((section, idx) => (
             <div key={idx}>
               <motion.div variants={itemVariants} className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-white/5 rounded-lg border border-white/10">
+                <div className="p-2 bg-white rounded-lg border border-gray-100 shadow-sm">
                   {section.icon}
                 </div>
-                <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold text-white/90">
+                <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold text-[#1A1A2E]">
                   {section.category}
                 </h2>
               </motion.div>
@@ -128,25 +128,25 @@ export default function ResourcesPage() {
                     rel="noopener noreferrer"
                     variants={itemVariants}
                     whileHover={{ y: -5, scale: 1.02 }}
-                    className="bg-white/5 backdrop-blur-md rounded-2xl p-6 shadow-lg shadow-black/20 border border-white/10 hover:border-white/30 transition-all duration-300 flex flex-col group relative overflow-hidden"
+                    className="bg-white rounded-2xl p-6 shadow-lg shadow-black/5 border border-gray-100 hover:border-black/20 transition-all duration-300 flex flex-col group relative overflow-hidden"
                   >
-                    <div 
+                    <div
                       className="absolute top-0 left-0 w-1 h-full opacity-0 group-hover:opacity-100 transition-opacity"
                       style={{ backgroundColor: section.color, boxShadow: `0 0 10px ${section.color}` }}
                     />
-                    
+
                     <div className="flex justify-between items-start mb-3">
-                      <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-white/90 group-hover:text-white transition-colors pr-6">
+                      <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-[#1A1A2E] transition-colors pr-6">
                         {link.title}
                       </h3>
-                      <ExternalLink className="text-white/40 group-hover:text-white transition-colors flex-shrink-0" size={20} />
+                      <ExternalLink className="text-[#1A1A2E]/40 group-hover:text-[#1A1A2E] transition-colors flex-shrink-0" size={20} />
                     </div>
-                    
-                    <p className="font-[family-name:var(--font-sans)] text-white/60 text-sm leading-relaxed mb-4 flex-grow">
+
+                    <p className="font-[family-name:var(--font-sans)] text-[#1A1A2E]/60 text-sm leading-relaxed mb-4 flex-grow">
                       {link.desc}
                     </p>
-                    
-                    <div className="text-sm font-semibold flex items-center gap-2 mt-auto text-white/40 group-hover:text-white/80 transition-colors">
+
+                    <div className="text-sm font-semibold flex items-center gap-2 mt-auto text-[#1A1A2E]/40 group-hover:text-[#1A1A2E]/80 transition-colors">
                       Visit site
                     </div>
                   </motion.a>

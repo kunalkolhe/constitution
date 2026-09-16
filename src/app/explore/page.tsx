@@ -5,7 +5,7 @@ import Navbar from '@/components/shared/Navbar';
 import Footer from '@/components/shared/Footer';
 import { motion, Variants } from 'framer-motion';
 import Link from 'next/link';
-import { BookOpen, Shield, HeartHandshake, FileText, AlertTriangle, Building2, BrainCircuit, Flag, Gavel, Scale, FileSignature, Layers, Globe, Map } from 'lucide-react';
+import { HeartHandshake, FileText, AlertTriangle, Building2, Flag, Scale, FileSignature, Globe, Map } from 'lucide-react';
 
 const TOPICS = [
   {
@@ -97,7 +97,7 @@ const itemVariants: Variants = {
 
 export default function ExplorePage() {
   return (
-    <main className="bg-[#05050A] min-h-screen">
+    <main className="bg-[#FFF8F0] min-h-screen">
       <Navbar />
       
       <div className="pt-32 pb-24 px-4 md:px-8 max-w-7xl mx-auto">
@@ -105,7 +105,7 @@ export default function ExplorePage() {
           <motion.h1 
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="font-[family-name:var(--font-display)] text-[clamp(2.5rem,6vw,4rem)] font-bold text-white leading-none mb-4"
+            className="font-[family-name:var(--font-display)] text-[clamp(2.5rem,6vw,4rem)] font-bold text-[#1A1A2E] leading-none mb-4"
           >
             Explore the Constitution
           </motion.h1>
@@ -113,7 +113,7 @@ export default function ExplorePage() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="font-[family-name:var(--font-sans)] text-white/60 text-lg max-w-2xl mx-auto"
+            className="font-[family-name:var(--font-sans)] text-[#1A1A2E]/60 text-lg max-w-2xl mx-auto"
           >
             Navigate through the various parts, provisions, and principles that make up the supreme law of India.
           </motion.p>
@@ -130,27 +130,27 @@ export default function ExplorePage() {
               <motion.div 
                 variants={itemVariants}
                 whileHover={{ y: -5, scale: 1.02 }}
-                className="bg-white/5 backdrop-blur-md rounded-2xl p-6 shadow-lg shadow-black/20 border border-white/10 hover:border-white/30 transition-all duration-300 h-full flex flex-col group relative overflow-hidden"
+                className="bg-white rounded-2xl p-6 shadow-lg shadow-black/5 border border-gray-100 hover:border-black/20 transition-all duration-300 h-full flex flex-col group relative overflow-hidden"
               >
-                <div 
+                <div
                   className="absolute top-0 left-0 w-1 h-full opacity-0 group-hover:opacity-100 transition-opacity"
                   style={{ backgroundColor: topic.color, boxShadow: `0 0 10px ${topic.color}` }}
                 />
-                
+
                 <div className="flex justify-between items-start mb-6">
-                  <div className="p-3 bg-white/5 rounded-xl border border-white/5">
+                  <div className="p-3 bg-black/[0.03] rounded-xl border border-black/5">
                     {topic.icon}
                   </div>
-                  <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-white/10 text-white/70">
+                  <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-black/5 text-[#1A1A2E]/70">
                     {topic.part}
                   </span>
                 </div>
-                
-                <h3 className="font-[family-name:var(--font-display)] text-2xl font-bold text-white/90 mb-3 group-hover:text-white transition-colors">
+
+                <h3 className="font-[family-name:var(--font-display)] text-2xl font-bold text-[#1A1A2E] mb-3 transition-colors">
                   {topic.title}
                 </h3>
-                
-                <p className="font-[family-name:var(--font-sans)] text-white/60 mb-4 flex-grow group-hover:text-white/80 transition-colors">
+
+                <p className="font-[family-name:var(--font-sans)] text-[#1A1A2E]/60 mb-4 flex-grow transition-colors">
                   {topic.desc}
                 </p>
                 

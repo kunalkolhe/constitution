@@ -1,10 +1,42 @@
 <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="512" height="512" rx="112" fill="url(#grad)" />
-  
-  <path d="M120 400H392V360H120V400ZM152 360H200V184H152V360ZM232 360H280V184H232V360ZM312 360H360V184H312V360ZM100 184H412V136L256 64L100 136V184Z" fill="white"/>
-  
+  <rect width="512" height="512" rx="112" fill="#05050A" />
+
+  <circle cx="256" cy="256" r="230" fill="url(#ring)" />
+  <circle cx="256" cy="256" r="196" fill="#FFF8F0" />
+
+  <g>
+      <line x1="256" y1="256" x2="466.00" y2="256.00" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
+      <line x1="256" y1="256" x2="458.84" y2="310.35" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
+      <line x1="256" y1="256" x2="437.87" y2="361.00" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
+      <line x1="256" y1="256" x2="404.49" y2="404.49" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
+      <line x1="256" y1="256" x2="361.00" y2="437.87" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
+      <line x1="256" y1="256" x2="310.35" y2="458.84" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
+      <line x1="256" y1="256" x2="256.00" y2="466.00" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
+      <line x1="256" y1="256" x2="201.65" y2="458.84" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
+      <line x1="256" y1="256" x2="151.00" y2="437.87" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
+      <line x1="256" y1="256" x2="107.51" y2="404.49" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
+      <line x1="256" y1="256" x2="74.13" y2="361.00" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
+      <line x1="256" y1="256" x2="53.16" y2="310.35" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
+      <line x1="256" y1="256" x2="46.00" y2="256.00" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
+      <line x1="256" y1="256" x2="53.16" y2="201.65" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
+      <line x1="256" y1="256" x2="74.13" y2="151.00" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
+      <line x1="256" y1="256" x2="107.51" y2="107.51" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
+      <line x1="256" y1="256" x2="151.00" y2="74.13" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
+      <line x1="256" y1="256" x2="201.65" y2="53.16" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
+      <line x1="256" y1="256" x2="256.00" y2="46.00" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
+      <line x1="256" y1="256" x2="310.35" y2="53.16" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
+      <line x1="256" y1="256" x2="361.00" y2="74.13" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
+      <line x1="256" y1="256" x2="404.49" y2="107.51" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
+      <line x1="256" y1="256" x2="437.87" y2="151.00" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
+      <line x1="256" y1="256" x2="458.84" y2="201.65" stroke="#0A0F5C" stroke-width="15" stroke-linecap="round" />
+  </g>
+
+  <circle cx="256" cy="256" r="196" fill="none" stroke="#0A0F5C" stroke-width="10" />
+  <circle cx="256" cy="256" r="34" fill="#0A0F5C" />
+  <circle cx="256" cy="256" r="34" fill="none" stroke="#FF6B00" stroke-width="8" />
+
   <defs>
-    <linearGradient id="grad" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+    <linearGradient id="ring" x1="26" y1="26" x2="486" y2="486" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#FF8C3A" />
       <stop offset="100%" stop-color="#DE350B" />
     </linearGradient>

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import Image from 'next/image';
 import Navbar from '@/components/shared/Navbar';
 import Footer from '@/components/shared/Footer';
@@ -195,15 +195,22 @@ function TimelineCard({ event, setActiveEvent }: { event: typeof EVENTS[0], setA
 export default function TimelinePage() {
   const [filter, setFilter] = useState('All');
   const [activeEvent, setActiveEvent] = useState(EVENTS[0]);
+  const [prevFilter, setPrevFilter] = useState(filter);
 
-  const filteredEvents = EVENTS.filter(e => filter === 'All' || e.category === filter);
+  const filteredEvents = useMemo(
+    () => EVENTS.filter(e => filter === 'All' || e.category === filter),
+    [filter]
+  );
 
-  // When filter changes, reset active event to first of that filter
-  useEffect(() => {
+  // Reset the active event to the first of the new filter as soon as the
+  // filter changes, adjusting state during render (per React's guidance)
+  // instead of in an effect, so there's no extra render in between.
+  if (filter !== prevFilter) {
+    setPrevFilter(filter);
     if (filteredEvents.length > 0) {
       setActiveEvent(filteredEvents[0]);
     }
-  }, [filter]);
+  }
 
   return (
     <main className="bg-[#FFF8F0] min-h-screen relative selection:bg-[#FF6B00] selection:text-white">

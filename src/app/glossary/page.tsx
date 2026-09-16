@@ -41,15 +41,15 @@ export default function GlossaryPage() {
   });
 
   return (
-    <main className="bg-[#05050A] min-h-screen">
+    <main className="bg-[#FFF8F0] min-h-screen">
       <Navbar />
       
       <div className="pt-32 pb-24 px-4 md:px-8 max-w-5xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="font-[family-name:var(--font-display)] text-[clamp(2.5rem,6vw,4rem)] font-bold text-white leading-none mb-4">
+          <h1 className="font-[family-name:var(--font-display)] text-[clamp(2.5rem,6vw,4rem)] font-bold text-[#1A1A2E] leading-none mb-4">
             Constitution Glossary
           </h1>
-          <p className="font-[family-name:var(--font-sans)] text-white/60 text-lg mb-8">
+          <p className="font-[family-name:var(--font-sans)] text-[#1A1A2E]/60 text-lg mb-8">
             Legal terms, explained in plain language.
           </p>
 
@@ -58,12 +58,12 @@ export default function GlossaryPage() {
             <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none text-[#FF6B00]">
               <Search size={20} />
             </div>
-            <input 
+            <input
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder={PLACEHOLDERS[placeholderIdx]}
-              className="w-full bg-white/5 border border-white/10 focus:border-white/30 rounded-full py-4 pl-12 pr-6 shadow-lg shadow-black/20 outline-none text-white font-[family-name:var(--font-sans)] transition-all placeholder:text-white/30"
+              className="w-full bg-white border border-gray-200 focus:border-[#FF6B00]/50 rounded-full py-4 pl-12 pr-6 shadow-lg shadow-black/5 outline-none text-[#1A1A2E] font-[family-name:var(--font-sans)] transition-all placeholder:text-[#1A1A2E]/30"
             />
           </div>
 
@@ -74,9 +74,9 @@ export default function GlossaryPage() {
                 key={cat}
                 onClick={() => setFilter(cat)}
                 className={`px-4 py-1.5 rounded-full text-sm font-semibold transition-colors ${
-                  filter === cat 
-                    ? 'bg-white text-black' 
-                    : 'bg-transparent text-white/60 border border-white/20 hover:border-white/50 hover:text-white'
+                  filter === cat
+                    ? 'bg-[#1A1A2E] text-white'
+                    : 'bg-white text-[#1A1A2E]/60 border border-gray-200 hover:border-gray-400 hover:text-[#1A1A2E]'
                 }`}
               >
                 {cat}
@@ -93,21 +93,21 @@ export default function GlossaryPage() {
               <motion.div 
                 key={term.id}
                 layout
-                className="bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 shadow-lg shadow-black/20 overflow-hidden"
+                className="bg-white rounded-2xl border border-gray-100 shadow-lg shadow-black/5 overflow-hidden"
               >
-                <button 
-                  className="w-full p-6 text-left flex justify-between items-center bg-transparent hover:bg-white/5 transition-colors"
+                <button
+                  className="w-full p-6 text-left flex justify-between items-center bg-transparent hover:bg-black/[0.02] transition-colors"
                   onClick={() => setExpandedId(isExpanded ? null : term.id)}
                 >
                   <div>
-                    <h3 className="font-[family-name:var(--font-display)] text-2xl font-bold text-white/90">
+                    <h3 className="font-[family-name:var(--font-display)] text-2xl font-bold text-[#1A1A2E]">
                       {term.term}
                     </h3>
                     <p className="font-[family-name:var(--font-devanagari)] text-[#FF6B00] font-medium">
                       {term.hindi}
                     </p>
                   </div>
-                  <div className="text-white/50">
+                  <div className="text-[#1A1A2E]/50">
                     {isExpanded ? <ChevronUp size={24} /> : <ChevronDown size={24} />}
                   </div>
                 </button>
@@ -120,11 +120,11 @@ export default function GlossaryPage() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className="px-6 pb-6 pt-2 border-t border-white/10">
-                        <span className="inline-block mb-3 text-xs font-bold text-white/60 uppercase tracking-widest bg-white/10 px-2 py-1 rounded">
+                      <div className="px-6 pb-6 pt-2 border-t border-black/5">
+                        <span className="inline-block mb-3 text-xs font-bold text-[#1A1A2E]/60 uppercase tracking-widest bg-black/5 px-2 py-1 rounded">
                           {term.category}
                         </span>
-                        <p className="font-[family-name:var(--font-sans)] text-white/80 leading-relaxed">
+                        <p className="font-[family-name:var(--font-sans)] text-[#1A1A2E]/80 leading-relaxed">
                           {term.desc}
                         </p>
                       </div>
@@ -135,7 +135,7 @@ export default function GlossaryPage() {
             );
           })}
           {filteredTerms.length === 0 && (
-            <div className="col-span-1 md:col-span-2 text-center py-12 text-white/50">
+            <div className="col-span-1 md:col-span-2 text-center py-12 text-[#1A1A2E]/50">
               No terms found matching your search.
             </div>
           )}

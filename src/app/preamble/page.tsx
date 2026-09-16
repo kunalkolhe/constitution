@@ -42,7 +42,7 @@ export default function PreamblePage() {
   };
 
   return (
-    <main className="relative min-h-screen bg-[#1E1E2A]">
+    <main className="relative min-h-screen bg-[#FFF8F0]">
       <Navbar />
       
       {/* Scroll Progress Bar */}
@@ -65,10 +65,10 @@ export default function PreamblePage() {
 
       <div className="pt-32 pb-24 px-4 md:px-8 max-w-5xl mx-auto min-h-screen flex flex-col items-center relative z-10">
         <div className="text-center mb-12">
-          <h1 className="font-[family-name:var(--font-display)] text-[clamp(2.5rem,6vw,5rem)] font-bold text-[#F4F1EA] leading-none mb-4 drop-shadow-md">
+          <h1 className="font-[family-name:var(--font-display)] text-[clamp(2.5rem,6vw,5rem)] font-bold text-[#1A1A2E] leading-none mb-4">
             The Preamble
           </h1>
-          <p className="font-[family-name:var(--font-sans)] text-[#F4F1EA]/70 text-lg mb-6">
+          <p className="font-[family-name:var(--font-sans)] text-[#1A1A2E]/60 text-lg mb-6">
             The soul of the Indian Constitution
           </p>
           <AudioPlayer text={PREAMBLE_TEXT} />
@@ -78,10 +78,10 @@ export default function PreamblePage() {
           variants={containerVariants}
           initial="hidden"
           animate="show"
-          className="text-center leading-[2] md:leading-[2.2] font-[family-name:var(--font-display)] text-[clamp(1.5rem,3.5vw,2.5rem)] font-semibold text-[#F4F1EA]/90 drop-shadow-sm max-w-5xl p-6 sm:p-8 md:p-16 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md shadow-2xl relative overflow-hidden"
+          className="text-center leading-[2] md:leading-[2.2] font-[family-name:var(--font-display)] text-[clamp(1.5rem,3.5vw,2.5rem)] font-semibold text-[#1A1A2E]/90 max-w-5xl p-6 sm:p-8 md:p-16 rounded-3xl bg-white border border-gray-100 shadow-2xl shadow-black/5 relative overflow-hidden"
         >
           {/* Subtle inner glow for the glass card */}
-          <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#FFF0E0]/50 to-transparent pointer-events-none" />
           
           <div className="relative z-10">
           {words.map((word, i) => {
@@ -129,8 +129,8 @@ export default function PreamblePage() {
                 <h3 className="font-[family-name:var(--font-display)] text-2xl font-bold text-[#0A0F5C]">
                   Term Explained
                 </h3>
-                <button onClick={() => setActiveTerm(null)} className="p-2 hover:bg-gray-100 rounded-full transition-colors">
-                  <X size={24} className="text-[#1A1A2E]" />
+                <button onClick={() => setActiveTerm(null)} aria-label="Close" className="p-2 hover:bg-gray-100 rounded-full transition-colors">
+                  <X size={24} className="text-[#1A1A2E]" aria-hidden="true" />
                 </button>
               </div>
 

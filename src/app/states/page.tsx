@@ -43,7 +43,7 @@ export default function StatesPage() {
   };
 
   return (
-    <main className="bg-[#05050A] min-h-screen text-white overflow-hidden relative">
+    <main className="bg-[#FFF8F0] min-h-screen text-[#1A1A2E] overflow-hidden relative">
       <Navbar />
       
       {/* Background Ambience */}
@@ -58,23 +58,23 @@ export default function StatesPage() {
           <motion.div 
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-gray-200 shadow-sm mb-6"
           >
             <MapIcon size={14} className="text-[#FF6B00]" />
-            <span className="text-white/60 text-xs font-bold uppercase tracking-widest">Interactive Map</span>
+            <span className="text-[#1A1A2E]/60 text-xs font-bold uppercase tracking-widest">Interactive Map</span>
           </motion.div>
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="font-[family-name:var(--font-display)] text-4xl md:text-5xl font-bold mb-4"
+            className="font-[family-name:var(--font-display)] text-4xl md:text-5xl font-bold mb-4 text-[#1A1A2E]"
           >
             The Union of States
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-white/40 text-sm max-w-lg mx-auto"
+            className="text-[#1A1A2E]/50 text-sm max-w-lg mx-auto"
           >
             Hover over any state to see its name. Click on a state to reveal its constitutional jurisdiction and special provisions.
           </motion.p>
@@ -90,14 +90,14 @@ export default function StatesPage() {
           <India 
             type="select-single" 
             size={mapSize} 
-            mapColor="#ffffff10" 
-            strokeColor="#ffffff40"
+            mapColor="#0A0F5C10"
+            strokeColor="#1A1A2E40"
             strokeWidth={1.2}
             hoverColor="#FF6B00"
             selectColor="#138808"
             hints={true}
             hintTextColor="#ffffff"
-            hintBackgroundColor="#000000ee"
+            hintBackgroundColor="#1A1A2Eee"
             hintPadding="12px 20px"
             hintBorderRadius={8}
             onSelect={handleStateSelect}
@@ -126,108 +126,109 @@ export default function StatesPage() {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 20 }}
                 transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                className="w-full max-w-2xl bg-[#0a0a0f] border border-white/10 rounded-[2rem] shadow-2xl flex flex-col overflow-hidden pointer-events-auto max-h-[90vh]"
+                className="w-full max-w-2xl bg-white border border-gray-100 rounded-[2rem] shadow-2xl flex flex-col overflow-hidden pointer-events-auto max-h-[90vh] text-[#1A1A2E]"
               >
-                <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-br from-[#FF6B00]/20 to-transparent pointer-events-none z-0" />
-                
+                <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-br from-[#FF6B00]/10 to-transparent pointer-events-none z-0" />
+
                 {/* Modal Header */}
-                <div className="relative z-10 p-6 md:p-8 border-b border-white/10">
-                  <button 
+                <div className="relative z-10 p-6 md:p-8 border-b border-black/5">
+                  <button
                     onClick={() => setSelected(null)}
-                    className="absolute top-6 right-6 p-2 bg-white/5 hover:bg-white/10 rounded-full transition-colors backdrop-blur-md"
+                    aria-label="Close"
+                    className="absolute top-6 right-6 p-2 bg-black/5 hover:bg-black/10 rounded-full transition-colors"
                   >
-                    <X size={20} />
+                    <X size={20} aria-hidden="true" />
                   </button>
 
                   <span className={`inline-block px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 border ${
-                    selected.type === 'State' 
-                      ? 'bg-[#138808]/20 border-[#138808]/50 text-[#138808]' 
-                      : 'bg-[#DE350B]/20 border-[#DE350B]/50 text-[#DE350B]'
+                    selected.type === 'State'
+                      ? 'bg-[#138808]/10 border-[#138808]/40 text-[#138808]'
+                      : 'bg-[#DE350B]/10 border-[#DE350B]/40 text-[#DE350B]'
                   }`}>
                     {selected.type}
                   </span>
-                  
+
                   <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl font-black mb-2 leading-tight">
                     {selected.name}
                   </h2>
-                  
-                  <p className="text-sm text-white/70 leading-relaxed font-[family-name:var(--font-sans)] pr-8">
+
+                  <p className="text-sm text-[#1A1A2E]/70 leading-relaxed font-[family-name:var(--font-sans)] pr-8">
                     {selected.description}
                   </p>
                 </div>
 
                 {/* Modal Body */}
-                <div className="flex-1 overflow-y-auto custom-scrollbar p-6 md:p-8 space-y-4 relative z-10 bg-black/40">
+                <div className="flex-1 overflow-y-auto custom-scrollbar p-6 md:p-8 space-y-4 relative z-10 bg-[#FFF8F0]">
                   
                   {/* Information Cards - Grid Layout */}
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                    <div className="p-3 bg-white/5 rounded-xl border border-white/5 hover:border-white/20 transition-colors col-span-2 md:col-span-1">
+                    <div className="p-3 bg-black/[0.03] rounded-xl border border-black/5 hover:border-black/20 transition-colors col-span-2 md:col-span-1">
                       <div className="flex items-center gap-2 mb-1">
                         <MapPin size={14} className="text-[#FFD700]" />
-                        <h3 className="text-white/40 text-[9px] font-bold uppercase tracking-widest">Capital</h3>
+                        <h3 className="text-[#1A1A2E]/40 text-[9px] font-bold uppercase tracking-widest">Capital</h3>
                       </div>
                       <p className="text-sm font-bold pl-5">{selected.capital}</p>
                     </div>
 
-                    <div className="p-3 bg-white/5 rounded-xl border border-white/5 hover:border-white/20 transition-colors col-span-2 md:col-span-1">
+                    <div className="p-3 bg-black/[0.03] rounded-xl border border-black/5 hover:border-black/20 transition-colors col-span-2 md:col-span-1">
                       <div className="flex items-center gap-2 mb-1">
                         <Calendar size={14} className="text-[#00B8D9]" />
-                        <h3 className="text-white/40 text-[9px] font-bold uppercase tracking-widest">Formation</h3>
+                        <h3 className="text-[#1A1A2E]/40 text-[9px] font-bold uppercase tracking-widest">Formation</h3>
                       </div>
                       <p className="text-sm font-bold pl-5">{selected.formationYear}</p>
                     </div>
 
                     {selected.population && (
-                      <div className="p-3 bg-white/5 rounded-xl border border-white/5 hover:border-white/20 transition-colors">
+                      <div className="p-3 bg-black/[0.03] rounded-xl border border-black/5 hover:border-black/20 transition-colors">
                         <div className="flex items-center gap-2 mb-1">
                           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#138808]"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                          <h3 className="text-white/40 text-[9px] font-bold uppercase tracking-widest">Population</h3>
+                          <h3 className="text-[#1A1A2E]/40 text-[9px] font-bold uppercase tracking-widest">Population</h3>
                         </div>
                         <p className="text-sm font-bold pl-5">{selected.population}</p>
                       </div>
                     )}
 
                     {selected.area && (
-                      <div className="p-3 bg-white/5 rounded-xl border border-white/5 hover:border-white/20 transition-colors">
+                      <div className="p-3 bg-black/[0.03] rounded-xl border border-black/5 hover:border-black/20 transition-colors">
                         <div className="flex items-center gap-2 mb-1">
                           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#FF6B00]"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-                          <h3 className="text-white/40 text-[9px] font-bold uppercase tracking-widest">Area</h3>
+                          <h3 className="text-[#1A1A2E]/40 text-[9px] font-bold uppercase tracking-widest">Area</h3>
                         </div>
                         <p className="text-sm font-bold pl-5">{selected.area}</p>
                       </div>
                     )}
 
-                    <div className="p-3 bg-white/5 rounded-xl border border-white/5 hover:border-white/20 transition-colors col-span-2 md:col-span-4 flex items-center gap-4">
+                    <div className="p-3 bg-black/[0.03] rounded-xl border border-black/5 hover:border-black/20 transition-colors col-span-2 md:col-span-4 flex items-center gap-4">
                       <Scale size={18} className="text-[#5243AA] flex-shrink-0" />
                       <div>
-                        <h3 className="text-white/40 text-[9px] font-bold uppercase tracking-widest">High Court Jurisdiction</h3>
+                        <h3 className="text-[#1A1A2E]/40 text-[9px] font-bold uppercase tracking-widest">High Court Jurisdiction</h3>
                         <p className="text-sm font-bold">{selected.highCourt}</p>
                       </div>
                     </div>
                   </div>
 
                   {/* Constitutional Representation (Compact Row) */}
-                  <div className="bg-white/5 rounded-2xl border border-white/10 p-4">
-                    <h3 className="text-white/40 text-[10px] font-bold uppercase tracking-widest mb-3 flex items-center gap-2">
-                      <Landmark size={14} className="text-[#FFD700]" />
+                  <div className="bg-black/[0.03] rounded-2xl border border-black/5 p-4">
+                    <h3 className="text-[#1A1A2E]/50 text-[10px] font-bold uppercase tracking-widest mb-3 flex items-center gap-2">
+                      <Landmark size={14} className="text-[#E3A300]" />
                       Constitutional Representation
                     </h3>
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center">
-                      <div className="bg-black/40 rounded-xl p-2 border border-white/5">
-                        <div className="text-[9px] text-white/40 uppercase font-bold mb-1">Lok Sabha</div>
+                      <div className="bg-white rounded-xl p-2 border border-black/5">
+                        <div className="text-[9px] text-[#1A1A2E]/40 uppercase font-bold mb-1">Lok Sabha</div>
                         <div className="font-black text-lg text-[#00B8D9]">{selected.lokSabhaSeats}</div>
                       </div>
-                      <div className="bg-black/40 rounded-xl p-2 border border-white/5">
-                        <div className="text-[9px] text-white/40 uppercase font-bold mb-1">Rajya Sabha</div>
+                      <div className="bg-white rounded-xl p-2 border border-black/5">
+                        <div className="text-[9px] text-[#1A1A2E]/40 uppercase font-bold mb-1">Rajya Sabha</div>
                         <div className="font-black text-lg text-[#00B8D9]">{selected.rajyaSabhaSeats}</div>
                       </div>
-                      <div className="bg-black/40 rounded-xl p-2 border border-white/5">
-                        <div className="text-[9px] text-white/40 uppercase font-bold mb-1">Assembly</div>
-                        <div className="font-black text-lg">{selected.assemblySeats}</div>
+                      <div className="bg-white rounded-xl p-2 border border-black/5">
+                        <div className="text-[9px] text-[#1A1A2E]/40 uppercase font-bold mb-1">Assembly</div>
+                        <div className="font-black text-lg text-[#1A1A2E]">{selected.assemblySeats}</div>
                       </div>
-                      <div className="bg-black/40 rounded-xl p-2 border border-white/5 flex flex-col justify-center">
-                        <div className="text-[9px] text-white/40 uppercase font-bold mb-1">Type</div>
-                        <div className="font-bold text-[10px] uppercase leading-tight text-[#FFD700]">{selected.legislatureType}</div>
+                      <div className="bg-white rounded-xl p-2 border border-black/5 flex flex-col justify-center">
+                        <div className="text-[9px] text-[#1A1A2E]/40 uppercase font-bold mb-1">Type</div>
+                        <div className="font-bold text-[10px] uppercase leading-tight text-[#E3A300]">{selected.legislatureType}</div>
                       </div>
                     </div>
                   </div>
@@ -241,8 +242,8 @@ export default function StatesPage() {
                           <Shield size={18} className="text-[#FF6B00]" />
                           <h3 className="text-[#FF6B00] text-[10px] font-bold uppercase tracking-widest">Constitutional Provision</h3>
                         </div>
-                        <p className="text-2xl font-black text-white mb-1">{selected.specialArticle}</p>
-                        <p className="text-xs text-white/80 leading-relaxed">
+                        <p className="text-2xl font-black text-[#1A1A2E] mb-1">{selected.specialArticle}</p>
+                        <p className="text-xs text-[#1A1A2E]/70 leading-relaxed">
                           This region operates under special provisions detailed within this article.
                         </p>
                       </div>

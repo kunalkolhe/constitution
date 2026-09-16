@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Baloo_2, Inter, Noto_Sans_Devanagari } from "next/font/google";
+import { Baloo_2, Inter, Noto_Sans_Devanagari, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 import Script from "next/script";
@@ -20,8 +20,14 @@ const notoSansDevanagari = Noto_Sans_Devanagari({
   weight: ["400", "500", "600", "700"],
 });
 
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair-display",
+  subsets: ["latin"],
+  weight: ["600", "700"],
+});
+
 export const metadata: Metadata = {
-  title: "BhartiyaSavidhan | Samajho Apna Adhikar",
+  title: "BhartiyaSamvidhan | Samajho Apna Adhikar",
   description: "Learn the Indian Constitution easily with 3D interactions.",
 };
 
@@ -33,7 +39,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${baloo2.variable} ${inter.variable} ${notoSansDevanagari.variable} h-full antialiased`}
+      className={`${baloo2.variable} ${inter.variable} ${notoSansDevanagari.variable} ${playfairDisplay.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col m-0 p-0 overflow-x-hidden bg-[var(--background)] text-[var(--foreground)]" suppressHydrationWarning>
@@ -43,7 +49,7 @@ export default function RootLayout({
         </LanguageProvider>
         
         {/* Google Translate Script */}
-        <Script strategy="afterInteractive" dangerouslySetInnerHTML={{
+        <Script id="google-translate-init" strategy="afterInteractive" dangerouslySetInnerHTML={{
           __html: `
             function googleTranslateElementInit() {
               new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');

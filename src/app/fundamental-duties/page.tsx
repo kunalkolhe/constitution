@@ -22,16 +22,16 @@ const DUTIES = [
 
 export default function FundamentalDutiesPage() {
   return (
-    <main className="bg-[#05050A] min-h-screen">
+    <main className="bg-[#FFF8F0] min-h-screen">
       <Navbar />
-      
+
       <div className="pt-32 pb-24 px-4 md:px-8 max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <span className="text-[#DE350B] font-bold tracking-widest uppercase text-sm mb-4 block">Part IVA • Article 51A</span>
-          <h1 className="font-[family-name:var(--font-display)] text-[clamp(2.5rem,5vw,3.5rem)] font-bold text-white leading-none mb-6">
+          <h1 className="font-[family-name:var(--font-display)] text-[clamp(2.5rem,5vw,3.5rem)] font-bold text-[#1A1A2E] leading-none mb-6">
             Fundamental Duties
           </h1>
-          <p className="font-[family-name:var(--font-sans)] text-white/60 text-lg max-w-3xl mx-auto">
+          <p className="font-[family-name:var(--font-sans)] text-[#1A1A2E]/60 text-lg max-w-3xl mx-auto">
             Added by the 42nd Amendment in 1976 (and one more in 2002), these are the moral obligations of all citizens to help promote a spirit of patriotism and to uphold the unity of India. They serve as a reminder that rights come with responsibilities.
           </p>
         </div>
@@ -45,15 +45,15 @@ export default function FundamentalDutiesPage() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
               whileHover={{ y: -5 }}
-              className="bg-white/5 backdrop-blur-md rounded-2xl p-6 shadow-lg shadow-black/20 border border-white/10 flex flex-col items-center text-center gap-4 hover:shadow-xl hover:border-white/30 transition-all"
+              className="bg-white rounded-2xl p-6 shadow-lg shadow-black/5 border border-gray-100 flex flex-col items-center text-center gap-4 hover:shadow-xl hover:border-[#DE350B]/30 transition-all"
             >
-              <div className="p-4 bg-[#DE350B]/20 text-[#DE350B] rounded-full border border-[#DE350B]/30">
+              <div className="p-4 bg-[#DE350B]/10 text-[#DE350B] rounded-full border border-[#DE350B]/20">
                 {duty.icon}
               </div>
-              <div className="w-8 h-8 rounded-full bg-white/10 border border-white/5 flex items-center justify-center font-bold text-white/50 text-sm mb-2">
+              <div className="w-8 h-8 rounded-full bg-black/5 border border-black/5 flex items-center justify-center font-bold text-[#1A1A2E]/50 text-sm mb-2">
                 {String.fromCharCode(97 + i)}
               </div>
-              <p className="text-white/80 font-medium">
+              <p className="text-[#1A1A2E]/80 font-medium">
                 {duty.text}
               </p>
             </motion.div>

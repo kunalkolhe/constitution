@@ -19,6 +19,7 @@
   --font-display: var(--font-baloo-2);
   --font-sans: var(--font-inter);
   --font-devanagari: var(--font-noto-sans-devanagari);
+  --font-serif: var(--font-playfair-display);
 }
 
 :root {

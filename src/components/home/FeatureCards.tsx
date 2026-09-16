@@ -95,10 +95,10 @@ export default function FeatureCards() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,4rem)] font-bold text-white leading-[1.2] tracking-[-0.03em] mb-4">
+          <h2 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,4rem)] font-bold text-[#1A1A2E] leading-[1.2] tracking-[-0.03em] mb-4">
             Everything the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B00] to-[#FF8C3A]">Constitution</span><br/>Has to Offer
           </h2>
-          <p className="font-[family-name:var(--font-sans)] text-[1.1rem] text-white/60">
+          <p className="font-[family-name:var(--font-sans)] text-[1.1rem] text-[#1A1A2E]/60">
             From Preamble to Parliament — explore it all
           </p>
         </motion.div>
@@ -116,7 +116,7 @@ export default function FeatureCards() {
                 variants={cardVariants}
                 whileHover={{ y: -8, scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className="bg-white/5 backdrop-blur-md rounded-2xl p-7 h-full flex flex-col border border-white/10 shadow-lg shadow-black/20 hover:border-white/30 hover:shadow-[#FF6B00]/10 hover:shadow-2xl transition-all duration-300 relative overflow-hidden group"
+                className="bg-white rounded-2xl p-7 h-full flex flex-col border border-gray-100 shadow-lg shadow-black/5 hover:border-[#FF6B00]/30 hover:shadow-2xl transition-all duration-300 relative overflow-hidden group"
               >
                 {/* Subtle top border glow on hover based on card color */}
                 <div 
@@ -125,19 +125,19 @@ export default function FeatureCards() {
                 />
                 
                 <div className="flex justify-between items-start mb-6">
-                  <div className="p-3 bg-white/5 rounded-xl border border-white/5">
+                  <div className="p-3 bg-black/[0.03] rounded-xl border border-black/5">
                     {card.icon}
                   </div>
                   <span className={`px-3 py-1 text-[0.75rem] font-semibold tracking-wider rounded-full ${card.badgeColor}`}>
                     {card.badge}
                   </span>
                 </div>
-                
-                <h3 className="font-[family-name:var(--font-display)] font-bold text-2xl text-white/90 mb-3 group-hover:text-white transition-colors">
+
+                <h3 className="font-[family-name:var(--font-display)] font-bold text-2xl text-[#1A1A2E] mb-3 transition-colors">
                   {card.title}
                 </h3>
-                
-                <p className="font-[family-name:var(--font-sans)] text-white/60 leading-relaxed mt-auto group-hover:text-white/80 transition-colors">
+
+                <p className="font-[family-name:var(--font-sans)] text-[#1A1A2E]/60 leading-relaxed mt-auto group-hover:text-[#1A1A2E]/80 transition-colors">
                   {card.description}
                 </p>
               </motion.div>
