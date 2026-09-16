@@ -88,6 +88,11 @@ body {
 
 .custom-cursor-dot,
 .custom-cursor-ring {
+  /* Hidden by default — CustomCursor.tsx's effect only ever sets a
+     transform on fine-pointer devices, so without this a touch device
+     would otherwise show a static dot+ring stuck in the top-left corner
+     (their un-transformed position: fixed; top:0; left:0 default). */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -97,6 +102,13 @@ body {
   mix-blend-mode: difference;
   background: #FFF8F0;
   will-change: transform;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .custom-cursor-dot,
+  .custom-cursor-ring {
+    display: block;
+  }
 }
 
 .custom-cursor-dot {
